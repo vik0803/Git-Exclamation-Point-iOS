@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//This Object may gain more worth if I can add meaning to the highlight.
 @interface IDTComponentToHighlight : NSObject
 @property (nonatomic) NSRange range;
 @property (nonatomic,strong) NSDictionary *attributes;

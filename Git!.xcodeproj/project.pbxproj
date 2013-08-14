@@ -36,7 +36,7 @@
 		20E132471783994B00B547D3 /* ObjectiveGit.m in Resources */ = {isa = PBXBuildFile; fileRef = 20E132451783994B00B547D3 /* ObjectiveGit.m */; };
 		20E1324A1783999D00B547D3 /* libObjectiveGit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E132431783993B00B547D3 /* libObjectiveGit-iOS.a */; };
 		20E1324D1783C46900B547D3 /* IDTDiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E1324C1783C46900B547D3 /* IDTDiffViewController.m */; };
-		20F7E71317A0461900B10C73 /* IDTTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E71217A0461900B10C73 /* IDTTextStorage.m */; };
+		20F7E71317A0461900B10C73 /* IDTTextStorageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,8 +120,8 @@
 		20E132451783994B00B547D3 /* ObjectiveGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveGit.m; path = "../../../../../Desktop/EveryThing/objective-git/Classes/ObjectiveGit.m"; sourceTree = "<group>"; };
 		20E1324B1783C46900B547D3 /* IDTDiffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTDiffViewController.h; sourceTree = "<group>"; };
 		20E1324C1783C46900B547D3 /* IDTDiffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTDiffViewController.m; sourceTree = "<group>"; };
-		20F7E71117A0461900B10C73 /* IDTTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTTextStorage.h; sourceTree = "<group>"; };
-		20F7E71217A0461900B10C73 /* IDTTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTTextStorage.m; sourceTree = "<group>"; };
+		20F7E71117A0461900B10C73 /* IDTTextStorageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTTextStorageDelegate.h; sourceTree = "<group>"; };
+		20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTTextStorageDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,8 +264,8 @@
 			children = (
 				201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */,
 				201BCC7C1780E60F00F8CA32 /* IDTDocument.h */,
-				20F7E71117A0461900B10C73 /* IDTTextStorage.h */,
-				20F7E71217A0461900B10C73 /* IDTTextStorage.m */,
+				20F7E71117A0461900B10C73 /* IDTTextStorageDelegate.h */,
+				20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */,
 				20C347AB17B07BBD00A9EED5 /* IDTComponentToHighlight.h */,
 				20C347AC17B07BBD00A9EED5 /* IDTComponentToHighlight.m */,
 			);
@@ -421,7 +421,7 @@
 				20C347AD17B07BBD00A9EED5 /* IDTComponentToHighlight.m in Sources */,
 				20E1324D1783C46900B547D3 /* IDTDiffViewController.m in Sources */,
 				209570161798E98700FDF3AD /* IDTRepositoryTableViewController.m in Sources */,
-				20F7E71317A0461900B10C73 /* IDTTextStorage.m in Sources */,
+				20F7E71317A0461900B10C73 /* IDTTextStorageDelegate.m in Sources */,
 				201BCC791780E57100F8CA32 /* IDTGitObject.m in Sources */,
 				201BCC7B1780E5FC00F8CA32 /* IDTDocument.m in Sources */,
 				2095CFA8177F4E9E00D34A8A /* main.m in Sources */,

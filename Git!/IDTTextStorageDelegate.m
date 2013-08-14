@@ -6,22 +6,34 @@
 //   Copyright (c) 2013 E&Z Pierson. All rights reserved.
 // 
 
-#import "IDTTextStorage.h"
+#import "IDTTextStorageDelegate.h"
 #import "IDTComponentToHighlight.h"
 NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
 
-@interface IDTTextStorage ()
-
+@interface IDTTextStorageDelegate ()
 @property (nonatomic,strong) NSMutableAttributedString *backingStore;
 @property (nonatomic,strong) NSDictionary *objectiveCLangDict;
 @property (nonatomic) BOOL dynamicTextNeedsUpdate;
+@property (nonatomic,strong) NSDictionary *tokens;
 @end
 
-@implementation IDTTextStorage
+@implementation IDTTextStorageDelegate
+
+- (void)textStorage:(NSTextStorage *)textStorage didProcessEditing:(NSTextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta {
+
+    if (![self.backingStore isEqualToAttributedString:(NSMutableAttributedString *)textStorage]) {
+        self.backingStore = (NSMutableAttributedString *)textStorage;
+        [self performReplacementsForCharacterChangeInRange:editedRange];
+    }
+
+
+    
+}
+
+
 -(instancetype)init {
     self = [super init];
     if (self) {
-        self.backingStore = [[NSMutableAttributedString alloc]init];
         NSString *path = [[NSBundle mainBundle]pathForResource:@"ObjectiveCLang" ofType:@"plist"];
         self.objectiveCLangDict = [NSDictionary dictionaryWithContentsOfFile:path];
         self.tokens = self.objectiveCLangDict[@"keywords"];
@@ -32,38 +44,6 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
     return self;
 }
 
--(NSString *)string {
-    return [self.backingStore string];
-}
-
--(NSDictionary *)attributesAtIndex:(NSUInteger)location effectiveRange:(NSRangePointer)range {
-    return [self.backingStore attributesAtIndex:location effectiveRange:range];
-}
-
--(void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str {
-    [self beginEditing];
-    [self.backingStore replaceCharactersInRange:range withString:str];
-    [self edited:NSTextStorageEditedCharacters|NSTextStorageEditedAttributes range:range changeInLength:str.length - range.length];
-    self.dynamicTextNeedsUpdate = YES;
-    [self endEditing];
-}
-
--(void)setAttributes:(NSDictionary *)attrs range:(NSRange)range {
-    [self beginEditing];
-    [self.backingStore setAttributes:attrs range:range];
-    [self edited:NSTextStorageEditedAttributes range:range changeInLength:0];
-    [self endEditing];
-}
-
--(void)processEditing {
-
-    if (self.dynamicTextNeedsUpdate) {
-        self.dynamicTextNeedsUpdate = NO;
-        [self performReplacementsForCharacterChangeInRange:[self editedRange]];
-    }
-    [super processEditing];
-
-}
 
 -(void)performReplacementsForCharacterChangeInRange:(NSRange)changedRange {
     NSRange extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(changedRange.location, 0)]);
@@ -84,7 +64,7 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
              attributesForToken = defaultAttributes;
          }
          if(attributesForToken)
-             [self addAttributes:attributesForToken range:substringRange];
+             [self.backingStore addAttributes:attributesForToken range:substringRange];
     
      }];
     [self highlightComments:searchRange];
@@ -95,7 +75,7 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
          dispatch_queue_t mainQueue = dispatch_get_main_queue();
          dispatch_async(mainQueue, ^{
              for (IDTComponentToHighlight *componentToHighlight in componentsToHighlight) {
-                 [self addAttributes:componentToHighlight.attributes range:componentToHighlight.range];
+                 [self.backingStore addAttributes:componentToHighlight.attributes range:componentToHighlight.range];
              }
          });
      });
@@ -107,7 +87,7 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
             NSRange entireCommentRange = NSMakeRange(beginningOfComment.location, substring.length - beginningOfComment.location);
             NSString *entireComment = [substring substringWithRange:entireCommentRange];
             NSRange completeRange = [self.backingStore.string rangeOfString:entireComment options:0 range:substringRange];
-            [self addAttributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]} range:completeRange];
+            [self.backingStore addAttributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]} range:completeRange];
         }
     }];
     
@@ -141,4 +121,12 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
     
     return attributesForToken;
 }
+
+
+
+
+
+
+
+
 @end
