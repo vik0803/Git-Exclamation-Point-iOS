@@ -1,7 +1,8 @@
 Git-Exclamation-Point-iOS
 =========================
 
-A Git on iOS project (using /libgit2/Objective-Git). iOS 7 only. 
+A Git on iOS project (using /libgit2/Objective-Git). iOS 7 only.
+Licensed under the MIT license.
 
 What's With the Name?
 ===================
