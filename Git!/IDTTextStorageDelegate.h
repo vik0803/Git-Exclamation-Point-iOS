@@ -14,5 +14,4 @@ NSString *const IDTDefaultTokenName;
 
 -(instancetype)init;
 
-//- (void)textStorage:(NSTextStorage *)textStorage didProcessEditing:(NSTextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta;
 @end
