@@ -10,7 +10,7 @@
 #import "IDTGitObject.h"
 @interface IDTFileEditViewController : UIViewController
 
-@property (weak, nonatomic) UITextView *textView;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @property (nonatomic,strong) IDTGitObject *gitObject;

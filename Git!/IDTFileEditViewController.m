@@ -8,9 +8,9 @@
 
 #import "IDTFileEditViewController.h"
 #import "IDTDiffViewController.h"
-#import "IDTTextStorage.h"
+#import "IDTTextStorageDelegate.h"
 @interface IDTFileEditViewController () <UITextViewDelegate>
-
+@property (nonatomic,strong) IDTTextStorageDelegate *textStorageDelagate;
 @end
 
 @implementation IDTFileEditViewController
@@ -27,32 +27,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CGRect newTextViewRect = CGRectInset(self.view.bounds, 8, 0);
-    IDTTextStorage *textStorage = [[IDTTextStorage alloc]init];
-    NSLayoutManager *layoutManager = [[NSLayoutManager alloc]init];
-    NSTextContainer *container = [[NSTextContainer alloc]initWithSize:CGSizeMake(newTextViewRect.size.width, CGFLOAT_MAX)];
-    container.widthTracksTextView = YES;
-    [layoutManager addTextContainer:container];
-    [textStorage addLayoutManager:layoutManager];
-    UITextView *textView = [[UITextView alloc]initWithFrame:newTextViewRect textContainer:container];
-    [self.view addSubview:textView];
-    self.textView = textView;
+    self.textStorageDelagate = [[IDTTextStorageDelegate alloc]init];
+    self.textView.textStorage.delegate = self.textStorageDelagate;
     self.textView.delegate = self;
     [self.gitObject.document openWithCompletionHandler:^(BOOL success) {
-     self.textView.text = self.gitObject.document.userText;
+        self.textView.text = self.gitObject.document.userText;
+
+
     }];
     
-    
-    
-//    if (self.gitObject.gitStatus == 0) {
-//        NSMutableArray *toolbarButtons = [self.toolbar.items mutableCopy];
-//        [toolbarButtons removeObject:self.commitFile];
-//        [self.toolbar setItems:toolbarButtons animated:YES];
-//    } else if (![self.toolbar.items containsObject:self.commitFile]) {
-//        NSMutableArray *toolbarButtons = [self.toolbar.items mutableCopy];
-//        [toolbarButtons addObject:self.commitFile];
-//        [self.toolbar setItems:toolbarButtons animated:YES];
-//    }
+    if (self.gitObject.gitStatus == 0) {
+        NSMutableArray *toolbarButtons = [self.toolbar.items mutableCopy];
+        [toolbarButtons removeObject:self.commitFile];
+        [self.toolbar setItems:toolbarButtons animated:YES];
+    } else if (![self.toolbar.items containsObject:self.commitFile]) {
+        NSMutableArray *toolbarButtons = [self.toolbar.items mutableCopy];
+        [toolbarButtons addObject:self.commitFile];
+        [self.toolbar setItems:toolbarButtons animated:YES];
+    }
 	
 }
 
