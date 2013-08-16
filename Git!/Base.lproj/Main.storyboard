@@ -4,103 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="IDTViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dFq-8v-vyS"/>
-                        <viewControllerLayoutGuide type="bottom" id="rRY-G0-7dG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QB6-Sx-Xkn">
-                                <rect key="frame" x="331" y="339" width="112" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="DAX-4S-nLy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Commit to repo">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="commitToRepo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JoP-SC-Q9H"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ng-RQ-aAL">
-                                <rect key="frame" x="134" y="389" width="187" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="jtK-3O-P0q"/>
-                                    <constraint firstAttribute="width" constant="187" id="wQp-5T-6bh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Create Repo">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="createRepo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F3M-ch-rlG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GU-D7-SmE">
-                                <rect key="frame" x="445" y="389" width="179" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Clone a Github.com repo">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cloneRepo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Eq-0A-Sp7"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tyv-Ky-RDp">
-                                <rect key="frame" x="223" y="507" width="388" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ad0-YF-TNd">
-                                <rect key="frame" x="472" y="431" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7ng-RQ-aAL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="134" id="GtM-6q-l8g"/>
-                            <constraint firstItem="7ng-RQ-aAL" firstAttribute="baseline" secondItem="8GU-D7-SmE" secondAttribute="baseline" id="Lpe-1G-rf0"/>
-                            <constraint firstItem="QB6-Sx-Xkn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="339" id="W3Q-4c-fv6"/>
-                            <constraint firstItem="8GU-D7-SmE" firstAttribute="top" secondItem="7ng-RQ-aAL" secondAttribute="top" id="hOA-lj-GN0"/>
-                            <constraint firstItem="8GU-D7-SmE" firstAttribute="leading" secondItem="7ng-RQ-aAL" secondAttribute="trailing" constant="124" id="jYK-hm-Yn4"/>
-                            <constraint firstItem="7ng-RQ-aAL" firstAttribute="bottom" secondItem="8GU-D7-SmE" secondAttribute="bottom" id="pgq-hw-9Pq"/>
-                            <constraint firstItem="QB6-Sx-Xkn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="331" id="thf-c6-WB8"/>
-                            <constraint firstItem="7ng-RQ-aAL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="389" id="uqH-fy-2wL"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <connections>
-                        <outlet property="progressView" destination="ad0-YF-TNd" id="bFW-yA-BOR"/>
-                        <outlet property="textField" destination="Tyv-Ky-RDp" id="amd-Mc-517"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2689" y="-1369"/>
-        </scene>
         <!--Create Repo View Controller-->
         <scene sceneID="Nxf-Nt-AmM">
             <objects>
@@ -188,25 +91,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" id="pXW-R3-VW0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G70-jn-9rX">
-                                <rect key="frame" x="16" y="0.0" width="90" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Create Repo">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="createRepo:" destination="9xN-a6-Luv" eventType="touchUpInside" id="K9V-TB-O5N"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barelyLabel" destination="1cE-nw-nSy" id="cqn-te-gWK"/>
@@ -231,10 +116,10 @@
                         <viewControllerLayoutGuide type="bottom" id="wO5-Qs-iXw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hn0-bD-hWz">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XH-Yh-32x">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XH-Yh-32x">
                                 <rect key="frame" x="0.0" y="44" width="703" height="724"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -245,7 +130,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wF4-7F-3Qv">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="703" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Commit File" id="zO6-at-Ze4">
@@ -273,8 +158,6 @@
                     <connections>
                         <outlet property="commitFile" destination="zO6-at-Ze4" id="ou1-xO-4ih"/>
                         <outlet property="textView" destination="3XH-Yh-32x" id="72R-ze-aKJ"/>
-                        <outlet property="toolBar" destination="wF4-7F-3Qv" id="LtP-Lq-9Jp"/>
-                        <outlet property="toolbar" destination="wF4-7F-3Qv" id="Eqi-gJ-MV9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xai-or-ey4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -290,11 +173,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dYN-Kb-ktc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L6v-ur-wsf">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-Rf-AVf">
-                                <rect key="frame" x="409" y="20" width="359" height="960"/>
+                                <rect key="frame" x="665" y="20" width="359" height="704"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -304,7 +187,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sL5-uG-UCn">
-                                <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Cancel" id="i8g-Jl-dsT">
@@ -321,14 +204,14 @@
                                 </items>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4n1-lj-KqN">
-                                <rect key="frame" x="0.0" y="20" width="401" height="960"/>
+                                <rect key="frame" x="0.0" y="20" width="657" height="704"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Changed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCQ-V1-h46">
-                                <rect key="frame" x="95" y="991" width="72" height="21"/>
+                                <rect key="frame" x="95" y="735" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="zaU-wx-9E7"/>
@@ -338,7 +221,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unchanged" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teZ-Ye-Qbj">
-                                <rect key="frame" x="508" y="991" width="105" height="21"/>
+                                <rect key="frame" x="764" y="735" width="105" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="6tt-hj-CDa"/>
@@ -370,6 +253,7 @@
                             <constraint firstItem="lCQ-V1-h46" firstAttribute="leading" secondItem="L6v-ur-wsf" secondAttribute="leading" constant="95" id="xdY-oP-iy8"/>
                             <constraint firstItem="teZ-Ye-Qbj" firstAttribute="top" secondItem="4n1-lj-KqN" secondAttribute="bottom" constant="11" id="xl5-b7-HiZ"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
@@ -421,15 +305,15 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="vCk-Yn-sxr" customClass="IDTFileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wHB-GO-5Y8">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="739"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="3OL-Br-RC0">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="3OL-Br-RC0" id="cE1-Bd-Hdd">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -456,15 +340,15 @@
             <objects>
                 <tableViewController id="XdP-IC-nd4" customClass="IDTFileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8xn-sg-jdk">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="NBH-XI-rLe">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="NBH-XI-rLe" id="0Qr-ut-2ce">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -522,7 +406,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DH1-48-DOw"/>
-        <segue reference="icU-y0-ZV3"/>
+        <segue reference="Sef-nA-qxx"/>
+        <segue reference="v2f-db-Vc2"/>
     </inferredMetricsTieBreakers>
 </document>
