@@ -28,14 +28,14 @@
             if(![fileManager createFileAtPath:fileURL.path contents:Nil attributes:Nil]) return nil;
         }
         self.document = [[IDTDocument alloc]initWithFileURL:fileURL];
-            self.name = self.document.name;
-            self.repo = repo;
-            [self.repo enumerateFileStatusUsingBlock:^(NSURL *statusFileURL, GTRepositoryFileStatus status, BOOL *stop) {
-                if ([statusFileURL isEqual:self.document.fileURL]) {
-                    self.gitStatus = status;
-                }
-            }];
-        
+        self.name = self.document.name;
+        self.repo = repo;
+        [self.repo enumerateFileStatusUsingBlock:^(NSURL *statusFileURL, GTRepositoryFileStatus status, BOOL *stop) {
+            if ([statusFileURL isEqual:self.document.fileURL]) {
+                self.gitStatus = status;
+            }
+        }];
+    
     
     }
     
