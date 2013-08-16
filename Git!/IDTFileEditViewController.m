@@ -11,6 +11,7 @@
 #import "IDTTextStorageDelegate.h"
 @interface IDTFileEditViewController () <UITextViewDelegate>
 @property (nonatomic,strong) IDTTextStorageDelegate *textStorageDelagate;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @end
 
 @implementation IDTFileEditViewController

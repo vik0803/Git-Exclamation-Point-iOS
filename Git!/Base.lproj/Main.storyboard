@@ -158,6 +158,7 @@
                     <connections>
                         <outlet property="commitFile" destination="zO6-at-Ze4" id="ou1-xO-4ih"/>
                         <outlet property="textView" destination="3XH-Yh-32x" id="72R-ze-aKJ"/>
+                        <outlet property="toolbar" destination="wF4-7F-3Qv" id="LFy-5R-FNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xai-or-ey4" userLabel="First Responder" sceneMemberID="firstResponder"/>

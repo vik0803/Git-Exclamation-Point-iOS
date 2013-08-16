@@ -11,7 +11,6 @@
 @interface IDTFileEditViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @property (nonatomic,strong) IDTGitObject *gitObject;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *commitFile;
