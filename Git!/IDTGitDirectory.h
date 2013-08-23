@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "ObjectiveGit.h"
 #import "IDTGitObject.h"
+#import <IDTGitFile.h>
 //A 'gitDirectory' is an object that is a folder. It means that the folder is tracked under 
-@interface IDTGitDirectory : NSObject
-@property (nonatomic,strong) GTRepository *repo;
+@interface IDTGitDirectory : IDTGitObject
+
 @property (nonatomic,strong) NSMutableArray *gitObjects;
-@property (nonatomic,strong) NSString *name;
 
 -(instancetype)initWithGitDirectoryURL:(NSURL *)directoryURL;
+
 -(instancetype)initWithRepo:(GTRepository *)repo;
+
 -(BOOL)delete;
+
++(IDTGitDirectory *)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout error:(NSError **)error;
 @end

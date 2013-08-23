@@ -62,9 +62,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"cellReuseRepo";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     IDTGitDirectory *gitDirectory = [self.gitDirectories objectAtIndex:indexPath.row];
     cell.textLabel.text = gitDirectory.name;
+    
     return cell;
 }
 -(NSArray*)arrayOfFoldersInFolder:(NSString*) folder {

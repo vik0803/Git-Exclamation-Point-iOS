@@ -24,6 +24,7 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
     if (![self.backingStore isEqualToAttributedString:(NSMutableAttributedString *)textStorage]) {
         self.backingStore = (NSMutableAttributedString *)textStorage;
         [self performReplacementsForCharacterChangeInRange:editedRange];
+        self.backingStore = nil;
     }
 
 
@@ -69,7 +70,7 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
      }];
     [self highlightComments:searchRange];
      NSString *backingStoreString = self.backingStore.string;
-     dispatch_queue_t moreColoring = dispatch_queue_create("Continue job of coloring,",NULL);
+     dispatch_queue_t moreColoring = dispatch_queue_create("Continue job of coloring,",DISPATCH_QUEUE_CONCURRENT);
      dispatch_async(moreColoring, ^{
         NSArray *componentsToHighlight = [self highlightFunctionSyntax:backingStoreString];
          dispatch_queue_t mainQueue = dispatch_get_main_queue();

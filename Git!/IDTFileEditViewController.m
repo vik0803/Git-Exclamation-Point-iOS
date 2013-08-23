@@ -31,13 +31,9 @@
     self.textStorageDelagate = [[IDTTextStorageDelegate alloc]init];
     self.textView.textStorage.delegate = self.textStorageDelagate;
     self.textView.delegate = self;
-    [self.gitObject.document openWithCompletionHandler:^(BOOL success) {
-        self.textView.text = self.gitObject.document.userText;
-
-
-    }];
+    [self openDocument];
     
-    if (self.gitObject.gitStatus == 0) {
+    if (self.gitFile.gitStatus == 0) {
         NSMutableArray *toolbarButtons = [self.toolbar.items mutableCopy];
         [toolbarButtons removeObject:self.commitFile];
         [self.toolbar setItems:toolbarButtons animated:YES];
@@ -55,25 +51,37 @@
 }
 
 -(void)textViewDidChange:(UITextView *)textView {
-    self.gitObject.document.userText = textView.text;
-    [self.gitObject.document updateChangeCount:UIDocumentChangeDone];
+    self.gitFile.document.userText = textView.text;
+    [self.gitFile.document updateChangeCount:UIDocumentChangeDone];
 }
 -(void)viewWillDisappear:(BOOL)animated {
-    if (self.gitObject.document.documentState == UIDocumentStateNormal) {
-        [self closeDocument];
-    }
+    [self closeDocument];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     IDTDiffViewController *diffVC = [segue destinationViewController];
-    diffVC.gitObject = self.gitObject;
+    diffVC.gitFile = self.gitFile;
 }
 -(void)closeDocument {
-    [self.gitObject.document closeWithCompletionHandler:^(BOOL success) {
-        if (!success) {
-          NSLog(@"NOOOOOOOO The document failed to close naughty you!");
+    if (self.gitFile) {
+        if (self.gitFile.document.documentState == UIDocumentStateNormal) {
+            [self.gitFile.document closeWithCompletionHandler:^(BOOL success) {
+                if (!success) {
+                    NSLog(@"NOOOOOOOO The document failed to close naughty you!");
+                }
+            }];
         }
-    }];
-
+    }
 }
+
+-(void)openDocument {
+    if (self.gitFile.document.documentState == UIDocumentStateClosed) {
+        [self.gitFile.document openWithCompletionHandler:^(BOOL success) {
+            self.textView.text = self.gitFile.document.userText;
+        }];
+    }
+}
+
+
+
 @end

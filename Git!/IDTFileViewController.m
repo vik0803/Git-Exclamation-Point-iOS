@@ -60,10 +60,10 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    id gitThingy = [self.gitDirectory.gitObjects objectAtIndex:indexPath.row];
-    if ([gitThingy isKindOfClass:[IDTGitDirectory class]]) {
+    IDTGitObject *gitObject = self.gitDirectory.gitObjects[indexPath.row];
+    if (gitObject.directory) {
         [self performSegueWithIdentifier:@"goDeeper" sender:self];
-    } else if ([gitThingy isKindOfClass:[IDTGitObject class]]) {
+    } else {
         [self performSegueWithIdentifier:@"segueToEditFile" sender:self];
     }
 }
@@ -71,17 +71,17 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqual:@"segueToEditFile"]) {
         IDTFileEditViewController *fileEditVC = [segue destinationViewController];
-        fileEditVC.gitObject = [ self.gitDirectory.gitObjects objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        fileEditVC.gitFile = self.gitDirectory.gitObjects[[self.tableView indexPathForSelectedRow].row];
     } else if ([segue.identifier isEqualToString:@"goDeeper"]) {
         IDTFileViewController *fileVC = [segue destinationViewController];
-        fileVC.gitDirectory = [self.gitDirectory.gitObjects objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        fileVC.gitDirectory = self.gitDirectory.gitObjects[[self.tableView indexPathForSelectedRow].row];
        // self.gitDirectory = nil;
     }
 }
 
 
 -(void)createNewFile:(id)sender {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"New File" message:@"Create a new file" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create File",nil];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"New File" message:@"Create A New File" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create File",nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView show];
 }
@@ -89,9 +89,9 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         NSString *fileName = [alertView textFieldAtIndex:0].text;
-        NSURL *url = [NSURL fileURLWithPath:[self.gitDirectory.repo.fileURL.path stringByAppendingPathComponent:fileName]];
-        IDTGitObject *gitObject = [[IDTGitObject alloc]initWithFileURL:url gitRepo:self.gitDirectory.repo];
-        [self.gitDirectory.gitObjects insertObject:gitObject atIndex:0];
+        NSURL *fileURL = [NSURL fileURLWithPath:[self.gitDirectory.repo.fileURL.path stringByAppendingPathComponent:fileName]];
+        IDTGitFile *gitFile = [IDTGitFile createWithURL:fileURL andRepo:self.gitDirectory.repo];
+        [self.gitDirectory.gitObjects insertObject:gitFile atIndex:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
@@ -100,10 +100,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
  if (editingStyle == UITableViewCellEditingStyleDelete) {
-     IDTGitObject *gitObject = (IDTGitObject *)[self.gitDirectory.gitObjects objectAtIndex:indexPath.row];
+     IDTGitObject *gitObject = [self.gitDirectory.gitObjects objectAtIndex:indexPath.row];
      BOOL success = [gitObject delete];
-     [self.gitDirectory.gitObjects removeObject:gitObject];
      if (success) {
+         [self.gitDirectory.gitObjects removeObject:gitObject];
          [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
      } else {
          NSLog(@"PANIC");

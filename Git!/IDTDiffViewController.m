@@ -32,8 +32,8 @@
     self.changedTextView.textStorage.delegate = textStorageDelagate;
     self.unchangedTextVew.textStorage.delegate = textStorageDelagate;
     [self determineDelta];
-    IDTDocument *oldDocument = [[IDTDocument alloc]initWithFileURL:self.gitObject.document.fileURL];
-    IDTDocument *newDocument = self.gitObject.document;
+    IDTDocument *oldDocument = [[IDTDocument alloc]initWithFileURL:self.gitFile.document.fileURL];
+    IDTDocument *newDocument = self.gitFile.document;
     [oldDocument openWithCompletionHandler:^(BOOL success) {
         self.unchangedTextVew.text = oldDocument.userText;
         
@@ -77,7 +77,11 @@
 }
 
 - (IBAction)commitChanges:(id)sender {
-    NSLog(@"Not implemented!");
+    GTSignature *signature = [[GTSignature alloc]initWithName:nil email:nil time:[NSDate date]];
+    GTTree *tree = [[GTTree alloc]init];
+    NSError *error = nil;
+    NSString *SHA = [GTCommit shaByCreatingCommitInRepository:self.gitFile.repo updateRefNamed:@"HEAD" author:signature committer:signature message:@"A commit that changed these files was made" tree:tree parents:nil error:&error];
+    NSLog(@"SHA is %@",SHA);
 }
 
 - (IBAction)cancel:(id)sender {
@@ -88,13 +92,13 @@
 }
 -(void)determineDelta {
     NSError *error = nil;
-    GTDiff *diff = [GTDiff diffIndexToWorkingDirectoryInRepository:self.gitObject.repo options:nil error:&error];
+    GTDiff *diff = [GTDiff diffIndexToWorkingDirectoryInRepository:self.gitFile.repo options:nil error:&error];
     if (error) {
         NSLog(@"Error is %@",error);
     }
     [diff enumerateDeltasUsingBlock:^(GTDiffDelta *delta, BOOL *stop) {
-        NSString *oldFilePath = [self.gitObject.repo.fileURL.path stringByAppendingPathComponent:delta.oldFile.path];
-        if ([oldFilePath isEqualToString:self.gitObject.document.fileURL.path]) {
+        NSString *oldFilePath = [self.gitFile.repo.fileURL.path stringByAppendingPathComponent:delta.oldFile.path];
+        if ([oldFilePath isEqualToString:self.gitFile.document.fileURL.path]) {
             self.delta = delta;
             *stop = YES;
         }

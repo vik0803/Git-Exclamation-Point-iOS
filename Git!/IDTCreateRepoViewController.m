@@ -52,19 +52,12 @@
     IDTGitDirectory *gitRepository = Nil;
     if (self.cloneSwitch.on) {
         NSError *error = nil;
-        NSString *nameString = [NSString stringWithFormat:@"Documents/%@",self.repoNameTextField.text];
-        NSURL *fileURL = [NSURL fileURLWithPath:[NSHomeDirectory() stringByAppendingPathComponent:nameString]];
-        GTRepository *repo = [GTRepository cloneFromURL:[NSURL URLWithString:self.cloneURLTextField.text] toWorkingDirectory:fileURL barely:self.cloneBarelySwitch.on withCheckout:self.cloneWithCheckoutSwitch.on error:&error transferProgressBlock:^(const git_transfer_progress *transferProgress) {
-            
-        } checkoutProgressBlock:^(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps) {
-            
-        }];
-        if (error || repo == nil) {
+        gitRepository = [IDTGitDirectory cloneWithName:self.repoNameTextField.text URL:[NSURL URLWithString:self.cloneURLTextField.text] barely:self.cloneBarelySwitch.on checkout:self.cloneWithCheckoutSwitch.on error:&error];
+        if (error) {
             NSLog(@"error is %@",error);
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Failure" message:error.description delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"Ok", nil];
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Failure" message:error.description delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
             [alertView show];
-        } else {
-        gitRepository = [[IDTGitDirectory alloc]initWithRepo:repo];
+            return;
         }
     }else {
         NSError *error = nil;
@@ -108,6 +101,7 @@
         self.barelyLabel.hidden = YES;
     }
 }
+
 
 
 

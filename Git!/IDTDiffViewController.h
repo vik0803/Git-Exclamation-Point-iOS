@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ObjectiveGit.h"
-#import "IDTGitObject.h"
+#import "IDTGitFile.h"
 @interface IDTDiffViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextView *changedTextView;
 @property (weak, nonatomic) IBOutlet UITextView *unchangedTextVew;
-@property (nonatomic,strong) IDTGitObject *gitObject;
+@property (nonatomic,strong) IDTGitFile *gitFile;
 
 
 - (IBAction)commitChanges:(id)sender;

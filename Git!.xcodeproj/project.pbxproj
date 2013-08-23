@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		200B0C3017AB778A00E4C426 /* ObjectiveCLang.plist in Resources */ = {isa = PBXBuildFile; fileRef = 200B0C2F17AB778A00E4C426 /* ObjectiveCLang.plist */; };
+		201BB27617C57796009EF77E /* IDTGitFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BB27517C57796009EF77E /* IDTGitFile.m */; };
 		201BCC791780E57100F8CA32 /* IDTGitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC781780E57100F8CA32 /* IDTGitObject.m */; };
 		201BCC7B1780E5FC00F8CA32 /* IDTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */; };
 		2060499117950859005C65AC /* IDTGitDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2060499017950859005C65AC /* IDTGitDirectory.m */; };
@@ -79,6 +80,8 @@
 
 /* Begin PBXFileReference section */
 		200B0C2F17AB778A00E4C426 /* ObjectiveCLang.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ObjectiveCLang.plist; sourceTree = "<group>"; };
+		201BB27417C57796009EF77E /* IDTGitFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTGitFile.h; sourceTree = "<group>"; };
+		201BB27517C57796009EF77E /* IDTGitFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitFile.m; sourceTree = "<group>"; };
 		201BCC771780E57100F8CA32 /* IDTGitObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTGitObject.h; sourceTree = "<group>"; };
 		201BCC781780E57100F8CA32 /* IDTGitObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitObject.m; sourceTree = "<group>"; };
 		201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTDocument.m; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				20E132441783994B00B547D3 /* ObjectiveGit.h */,
 				20E132451783994B00B547D3 /* ObjectiveGit.m */,
 				201BCC771780E57100F8CA32 /* IDTGitObject.h */,
+				201BB27417C57796009EF77E /* IDTGitFile.h */,
+				201BB27517C57796009EF77E /* IDTGitFile.m */,
 				201BCC781780E57100F8CA32 /* IDTGitObject.m */,
 				2060498F17950859005C65AC /* IDTGitDirectory.h */,
 				2060499017950859005C65AC /* IDTGitDirectory.m */,
@@ -426,6 +431,7 @@
 				201BCC7B1780E5FC00F8CA32 /* IDTDocument.m in Sources */,
 				2095CFA8177F4E9E00D34A8A /* main.m in Sources */,
 				209E8DB71799111700A8C77A /* IDTCreateRepoViewController.m in Sources */,
+				201BB27617C57796009EF77E /* IDTGitFile.m in Sources */,
 				2091BCFC17813E0100858B97 /* IDTFileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

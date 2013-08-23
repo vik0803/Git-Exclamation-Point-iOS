@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IDTGitObject.h"
+#import "IDTGitFile.h"
 @interface IDTFileEditViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
-@property (nonatomic,strong) IDTGitObject *gitObject;
+@property (nonatomic,strong) IDTGitFile *gitFile;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *commitFile;
 
 //This is called by the appDelagte.
 -(void)closeDocument;
+//This is called by the appDelagte.
+-(void)openDocument;
 
 @end
