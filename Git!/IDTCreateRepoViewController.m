@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.tintColor = [UIColor purpleColor];
     self.cloneSwitch.on = NO;
     self.cloneWithCheckoutSwitch.hidden = YES;
     self.cloneBarelySwitch.hidden = YES;
@@ -94,6 +95,8 @@
         self.cloneBarelySwitch.hidden = NO;
         self.checkoutLabel.hidden = NO;
         self.barelyLabel.hidden = NO;
+        self.cloneWithCheckoutSwitch.on = NO;
+        self.cloneBarelySwitch.on = NO;
     } else {
         self.cloneWithCheckoutSwitch.hidden = YES;
         self.cloneBarelySwitch.hidden = YES;
