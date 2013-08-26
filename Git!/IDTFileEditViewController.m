@@ -33,13 +33,13 @@
     self.textView.delegate = self;
     [self openDocument];
     
-    if (self.gitFile.gitStatus == 0) {
-        NSMutableArray *toolbarButtons = [self.toolbar.items mutableCopy];
-        [toolbarButtons removeObject:self.commitFile];
-        [self.toolbar setItems:toolbarButtons animated:YES];
-    } else if (![self.toolbar.items containsObject:self.commitFile]) {
+    if (self.gitFile.gitStatus != 0) {
         NSMutableArray *toolbarButtons = [self.toolbar.items mutableCopy];
         [toolbarButtons addObject:self.commitFile];
+        [self.toolbar setItems:toolbarButtons animated:YES];
+    } else {
+        NSMutableArray *toolbarButtons = [self.toolbar.items mutableCopy];
+        [toolbarButtons removeObject:self.commitFile];
         [self.toolbar setItems:toolbarButtons animated:YES];
     }
 	

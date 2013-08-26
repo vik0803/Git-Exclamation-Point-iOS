@@ -36,13 +36,14 @@
     return [NSString stringWithFormat:@"The document is %@ \r The Name is %@ \r The gitStatus is %d \r and The repo is %@ ",self.document,self.name,self.gitStatus,self.repo];
 }
 -(GTRepositoryFileStatus)gitStatus {
-    GTRepositoryFileStatus status = 0;
+    __block GTRepositoryFileStatus returnStatus = 0;
     [self.repo enumerateFileStatusUsingBlock:^(NSURL *statusFileURL, GTRepositoryFileStatus status, BOOL *stop) {
         if ([statusFileURL isEqual:self.document.fileURL]) {
-            status = status;
+            returnStatus = status;
+            *stop = YES;
         }
     }];
-    return status;
+    return returnStatus;
 }
 
 +(instancetype)createWithURL:(NSURL *)fileURL andRepo:(GTRepository *)repo {
