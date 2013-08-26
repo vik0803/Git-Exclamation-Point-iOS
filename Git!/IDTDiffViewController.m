@@ -11,6 +11,7 @@
 @interface IDTDiffViewController ()
 //The individual file delta.
 @property (nonatomic,strong) GTDiffDelta *delta;
+@property (nonatomic,strong) IDTTextStorageDelegate *textStorageDelagate;
 @end
 
 @implementation IDTDiffViewController
@@ -28,9 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    IDTTextStorageDelegate *textStorageDelagate = [[IDTTextStorageDelegate alloc]init];
-    self.changedTextView.textStorage.delegate = textStorageDelagate;
-    self.unchangedTextVew.textStorage.delegate = textStorageDelagate;
+    self.textStorageDelagate = [[IDTTextStorageDelegate alloc]init];
+    self.changedTextView.textStorage.delegate = self.textStorageDelagate;
+    self.unchangedTextVew.textStorage.delegate = self.textStorageDelagate;
+    
     [self determineDelta];
     IDTDocument *oldDocument = [[IDTDocument alloc]initWithFileURL:self.gitFile.document.fileURL];
     IDTDocument *newDocument = self.gitFile.document;

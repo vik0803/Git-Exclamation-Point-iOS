@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		200B0C3017AB778A00E4C426 /* ObjectiveCLang.plist in Resources */ = {isa = PBXBuildFile; fileRef = 200B0C2F17AB778A00E4C426 /* ObjectiveCLang.plist */; };
+		200CAB5217C823A100DB04CC /* IDTSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200CAB5117C823A100DB04CC /* IDTSplitViewController.m */; };
 		201BB27617C57796009EF77E /* IDTGitFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BB27517C57796009EF77E /* IDTGitFile.m */; };
 		201BCC791780E57100F8CA32 /* IDTGitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC781780E57100F8CA32 /* IDTGitObject.m */; };
 		201BCC7B1780E5FC00F8CA32 /* IDTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */; };
@@ -80,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		200B0C2F17AB778A00E4C426 /* ObjectiveCLang.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ObjectiveCLang.plist; sourceTree = "<group>"; };
+		200CAB5017C823A100DB04CC /* IDTSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTSplitViewController.h; sourceTree = "<group>"; };
+		200CAB5117C823A100DB04CC /* IDTSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTSplitViewController.m; sourceTree = "<group>"; };
 		201BB27417C57796009EF77E /* IDTGitFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTGitFile.h; sourceTree = "<group>"; };
 		201BB27517C57796009EF77E /* IDTGitFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitFile.m; sourceTree = "<group>"; };
 		201BCC771780E57100F8CA32 /* IDTGitObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTGitObject.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 			children = (
 				201BCC7D1780E61A00F8CA32 /* Git (Model) */,
 				20C347AA17B07A9400A9EED5 /* Text (Model Layer) */,
+				200CAB5017C823A100DB04CC /* IDTSplitViewController.h */,
+				200CAB5117C823A100DB04CC /* IDTSplitViewController.m */,
 				2091BCFA17813E0100858B97 /* IDTFileViewController.h */,
 				2091BCFB17813E0100858B97 /* IDTFileViewController.m */,
 				209E8DB51799111700A8C77A /* IDTCreateRepoViewController.h */,
@@ -424,6 +429,7 @@
 				2091BCF917813DD100858B97 /* IDTFileEditViewController.m in Sources */,
 				2060499117950859005C65AC /* IDTGitDirectory.m in Sources */,
 				20C347AD17B07BBD00A9EED5 /* IDTComponentToHighlight.m in Sources */,
+				200CAB5217C823A100DB04CC /* IDTSplitViewController.m in Sources */,
 				20E1324D1783C46900B547D3 /* IDTDiffViewController.m in Sources */,
 				209570161798E98700FDF3AD /* IDTRepositoryTableViewController.m in Sources */,
 				20F7E71317A0461900B10C73 /* IDTTextStorageDelegate.m in Sources */,

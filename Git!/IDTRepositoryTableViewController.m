@@ -109,14 +109,14 @@
         IDTGitDirectory *gitDirectory = [self.gitDirectories objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         fileVC.gitDirectory = gitDirectory;
         
-    } else if ([segue.identifier isEqualToString:@"seugeToCreateRepo"]) {
+    } else if ([segue.identifier isEqualToString:@"segueToCreateRepo"]) {
         
     }
     
 }
 
 -(void)createNewRepo:(id)sender {
-    [self performSegueWithIdentifier:@"seugeToCreateRepo" sender:self];
+    [self performSegueWithIdentifier:@"segueToCreateRepo" sender:self];
 }
 
 @end
