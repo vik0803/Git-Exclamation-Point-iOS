@@ -116,7 +116,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wO5-Qs-iXw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hn0-bD-hWz">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XH-Yh-32x">
@@ -130,7 +130,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wF4-7F-3Qv">
-                                <rect key="frame" x="0.0" y="0.0" width="703" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Commit File" id="zO6-at-Ze4">
@@ -145,9 +145,9 @@
                         <constraints>
                             <constraint firstItem="3XH-Yh-32x" firstAttribute="leading" secondItem="wF4-7F-3Qv" secondAttribute="leading" id="5DT-lG-YAH"/>
                             <constraint firstAttribute="bottom" secondItem="3XH-Yh-32x" secondAttribute="bottom" id="MOt-b2-LBv"/>
-                            <constraint firstAttribute="trailing" secondItem="3XH-Yh-32x" secondAttribute="trailing" id="MbG-5N-p8f"/>
+                            <constraint firstAttribute="trailing" secondItem="3XH-Yh-32x" secondAttribute="trailing" constant="321" id="MbG-5N-p8f"/>
                             <constraint firstItem="3XH-Yh-32x" firstAttribute="leading" secondItem="Hn0-bD-hWz" secondAttribute="leading" id="UMH-ap-N7t"/>
-                            <constraint firstItem="3XH-Yh-32x" firstAttribute="trailing" secondItem="wF4-7F-3Qv" secondAttribute="trailing" id="n2N-3T-Q9b"/>
+                            <constraint firstItem="3XH-Yh-32x" firstAttribute="trailing" secondItem="wF4-7F-3Qv" secondAttribute="trailing" constant="-321" id="n2N-3T-Q9b"/>
                             <constraint firstItem="wF4-7F-3Qv" firstAttribute="top" secondItem="Hn0-bD-hWz" secondAttribute="top" id="w1w-zd-OCg"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -305,15 +305,15 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="vCk-Yn-sxr" customClass="IDTFileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wHB-GO-5Y8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="739"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="3OL-Br-RC0">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3OL-Br-RC0" id="cE1-Bd-Hdd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -340,15 +340,15 @@
             <objects>
                 <tableViewController id="XdP-IC-nd4" customClass="IDTFileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8xn-sg-jdk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="NBH-XI-rLe">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NBH-XI-rLe" id="0Qr-ut-2ce">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

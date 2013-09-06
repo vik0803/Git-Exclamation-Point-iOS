@@ -30,8 +30,8 @@
 {
     [super viewDidLoad];
     self.textStorageDelagate = [[IDTTextStorageDelegate alloc]init];
-    self.changedTextView.textStorage.delegate = self.textStorageDelagate;
-    self.unchangedTextVew.textStorage.delegate = self.textStorageDelagate;
+   // self.changedTextView.textStorage.delegate = self.textStorageDelagate;
+    //self.unchangedTextVew.textStorage.delegate = self.textStorageDelagate;
     
     [self determineDelta];
     IDTDocument *oldDocument = [[IDTDocument alloc]initWithFileURL:self.gitFile.document.fileURL];
@@ -43,29 +43,15 @@
             self.changedTextView.text = newDocument.userText;
             
             [self.delta enumerateHunksWithBlock:^(GTDiffHunk *hunk, BOOL *stop) {
-                
+                NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self.changedTextView.text];
+
                 [hunk enumerateLinesInHunkUsingBlock:^(GTDiffLine *diffLine, BOOL *stop) {
-                    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self.changedTextView.text];
-                    
-                    [self.changedTextView.text enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
-                        NSRange range = [self.changedTextView.text rangeOfString:diffLine.content];
-                        [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor magentaColor] range:range];
-//                       NSRange fullRange = NSMakeRange(0, self.changedTextView.text.length);
-//                        if (!fullRange.length > range.location + diffLine.newLineNumber) {
-//                            [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(range.location, range.location + diffLine.newLineNumber)];
-//                        }
-//                        [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(range.location + diffLine.newLineNumber, 1)];
-//                        if ([diffLine.content isEqualToString:line]) {
-//                            NSRange range = [self.changedTextView.text rangeOfString:line];
-//                            [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:range];
-//                            if (diffLine.oldLineNumber == -1) {
-//                                self.unchangedTextVew.text = [self.unchangedTextVew.attributedText.string stringByReplacingOccurrencesOfString:line withString:@" "];
-//                            }
-                        
-//                        }
-                    }];
-                    self.changedTextView.attributedText = attributedString;
+                    NSString *highlightString = [self getLineFromLineNumber:diffLine.newLineNumber];
+                    if (highlightString) {
+                        [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:[self.changedTextView.text rangeOfString:highlightString]];
+                    }
                 }];
+                self.changedTextView.attributedText = attributedString;
             }];
         }];
     }];
@@ -83,6 +69,7 @@
     GTTree *tree = [[GTTree alloc]init];
     NSError *error = nil;
     NSString *SHA = [GTCommit shaByCreatingCommitInRepository:self.gitFile.repo updateRefNamed:@"HEAD" author:signature committer:signature message:@"A commit that changed these files was made" tree:tree parents:nil error:&error];
+    if(error) NSLog(@"error is %@",error);
     NSLog(@"SHA is %@",SHA);
 }
 
@@ -107,4 +94,20 @@
     }];
 
 }
+
+-(NSString *)getLineFromLineNumber:(NSInteger)targetLineNumber {
+    __block NSInteger currentLineNumber = 0;
+    __block NSString *returnString;
+    [self.changedTextView.text enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
+        if (currentLineNumber == targetLineNumber) {
+            returnString = line;
+            *stop = YES;
+        }
+        currentLineNumber++;
+    }];
+    
+   return returnString;
+}
+
+
 @end

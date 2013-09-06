@@ -68,6 +68,8 @@
             [self.gitFile.document closeWithCompletionHandler:^(BOOL success) {
                 if (!success) {
                     NSLog(@"NOOOOOOOO The document failed to close naughty you!");
+                    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Failure" message:@"The document failed to save correctly please cross your fingers and restart this app." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                    [alertView show];
                 }
             }];
         }
