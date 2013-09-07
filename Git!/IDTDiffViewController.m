@@ -74,10 +74,7 @@
 }
 
 - (IBAction)cancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)determineDelta {
     NSError *error = nil;

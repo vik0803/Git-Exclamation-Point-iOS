@@ -121,8 +121,6 @@
 		20C347AB17B07BBD00A9EED5 /* IDTComponentToHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTComponentToHighlight.h; sourceTree = "<group>"; };
 		20C347AC17B07BBD00A9EED5 /* IDTComponentToHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTComponentToHighlight.m; sourceTree = "<group>"; };
 		20C768FF177F99AF00C3449F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		20E132441783994B00B547D3 /* ObjectiveGit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ObjectiveGit.h; path = "../../../../../Desktop/EveryThing/objective-git/Classes/ObjectiveGit.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		20E132451783994B00B547D3 /* ObjectiveGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveGit.m; path = "../../../../../Desktop/EveryThing/objective-git/Classes/ObjectiveGit.m"; sourceTree = "<group>"; };
 		20E1324B1783C46900B547D3 /* IDTDiffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTDiffViewController.h; sourceTree = "<group>"; };
 		20E1324C1783C46900B547D3 /* IDTDiffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTDiffViewController.m; sourceTree = "<group>"; };
 		20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -161,8 +159,8 @@
 		201BCC7D1780E61A00F8CA32 /* Git (Model) */ = {
 			isa = PBXGroup;
 			children = (
-				20E132441783994B00B547D3 /* ObjectiveGit.h */,
-				20E132451783994B00B547D3 /* ObjectiveGit.m */,
+				20F21F5B17D844EE0008FE61 /* ObjectiveGit.h */,
+				20F21F5C17D844EE0008FE61 /* ObjectiveGit.m */,
 				201BCC771780E57100F8CA32 /* IDTGitObject.h */,
 				201BB27417C57796009EF77E /* IDTGitFile.h */,
 				201BB27517C57796009EF77E /* IDTGitFile.m */,
@@ -222,8 +220,6 @@
 				20C347AA17B07A9400A9EED5 /* Text (Model Layer) */,
 				201BCC7D1780E61A00F8CA32 /* Git (Model) */,
 				200CAB5017C823A100DB04CC /* IDTSplitViewController.h */,
-				20F21F5B17D844EE0008FE61 /* ObjectiveGit.h */,
-				20F21F5C17D844EE0008FE61 /* ObjectiveGit.m */,
 				200CAB5117C823A100DB04CC /* IDTSplitViewController.m */,
 				2091BCFA17813E0100858B97 /* IDTFileViewController.h */,
 				2091BCFB17813E0100858B97 /* IDTFileViewController.m */,
