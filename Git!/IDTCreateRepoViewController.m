@@ -10,7 +10,8 @@
 #import <ObjectiveGit.h>
 #import "IDTGitDirectory.h"
 #import "IDTRepositoryTableViewController.h"
-@interface IDTCreateRepoViewController ()
+@interface IDTCreateRepoViewController () <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UISwitch *cloneSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *repoNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cloneURLTextField;
@@ -42,6 +43,7 @@
     [self.cloneSwitch addTarget:self action:@selector(cloneSwitchDidTurn) forControlEvents:UIControlEventValueChanged];
     self.repoNameTextField.placeholder = @"Type in the name of the Repo";
     self.cloneURLTextField.placeholder = @"Type in the URL of the git repository to clone. Make sure to turn on the clone switch aswell";
+    self.cloneURLTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,7 +97,7 @@
         self.cloneBarelySwitch.hidden = NO;
         self.checkoutLabel.hidden = NO;
         self.barelyLabel.hidden = NO;
-        self.cloneWithCheckoutSwitch.on = NO;
+        self.cloneWithCheckoutSwitch.on = YES;
         self.cloneBarelySwitch.on = NO;
     } else {
         self.cloneWithCheckoutSwitch.hidden = YES;
@@ -104,5 +106,22 @@
         self.barelyLabel.hidden = YES;
     }
 }
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSURL *url = [[NSURL alloc]initWithString:textField.text];
+    NSURLComponents *components = [[NSURLComponents alloc]initWithURL:url resolvingAgainstBaseURL:NO];
+    NSRegularExpression *regex = [[NSRegularExpression alloc]initWithPattern:@"[^/]+(?=/$|$)" options:0 error:nil];
+    [regex enumerateMatchesInString:components.path options:0 range:NSMakeRange(0, components.path.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+        NSRange removeExtraneousCharactersRanger = result.range;
+        removeExtraneousCharactersRanger.length = removeExtraneousCharactersRanger.length - 4;
+        self.repoNameTextField.text = [components.path substringWithRange:removeExtraneousCharactersRanger];
+    }];
+    self.cloneSwitch.on = YES;
+    [self cloneSwitchDidTurn];
+}
+
+
+
+
 
 @end
