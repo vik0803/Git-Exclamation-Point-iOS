@@ -19,7 +19,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -43,7 +43,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -69,7 +68,7 @@
     
     return cell;
 }
--(NSArray*)arrayOfFoldersInFolder:(NSString*) folder {
+-(NSArray*)arrayOfFoldersInFolder:(NSString *) folder {
 	NSFileManager *fm = [NSFileManager defaultManager];
 	NSArray* files = [fm contentsOfDirectoryAtPath:folder error:nil];
 	NSMutableArray *directoryList = [NSMutableArray arrayWithCapacity:10];
@@ -94,14 +93,10 @@
         [gitObject delete];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
 }
 
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"segueToFiles"]) {
