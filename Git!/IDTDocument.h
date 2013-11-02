@@ -12,25 +12,13 @@
 #pragma mark Properties 
 - (id)initWithFileURL:(NSURL *)url;
 
-//@property (nonatomic,strong) UAGithubEngine *githubEngine;
-
 @property (strong,nonatomic) NSMutableArray *rangesOfHighlight;
 
 @property (strong,nonatomic) NSString * userText;
 
-//Only works with .rtf files.
+// Only works with .rtf files.
 @property (nonatomic,strong) NSAttributedString *attributedText;
 
-@property (nonatomic) BOOL isGist;
-
 @property (nonatomic,strong,readonly) NSString *name;
-
-@property (nonatomic,strong) NSString *gistID;
-
-- (NSMutableArray *)stringMatchInString:(NSString *)inString WithRegularExpr:(NSString *)regex;
-
-
-
-
 
 @end
