@@ -10,11 +10,12 @@
 #import "ObjectiveGit.h"
 #import "IDTGitFile.h"
 @interface IDTDiffViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextView *changedTextView;
-@property (weak, nonatomic) IBOutlet UITextView *unchangedTextVew;
-@property (nonatomic,strong) IDTGitFile *gitFile;
 
+@property (nonatomic, weak) IBOutlet UITextView *newTextView __attribute__((ns_returns_not_retained));
+@property (nonatomic, weak) IBOutlet UITextView *oldTextView;
 
-- (IBAction)commitChanges:(id)sender;
-- (IBAction)cancel:(id)sender;
+@property (nonatomic, strong) GTStatusDelta *statusDelta;
+
+@property (nonatomic, strong) GTRepository *repo;
+
 @end

@@ -27,6 +27,8 @@
     return self;
 }
 
+
+
 -(instancetype)initWithRepo:(GTRepository *)repo {
     self = [super init];
     if (self == nil) return nil;
@@ -94,41 +96,41 @@
 }
 
 
-+(IDTGitDirectory *)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout error:(NSError **)error {
++(IDTGitDirectory *)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout transferProgressBlock:(void (^)(const git_transfer_progress *transfer_progress))transferProgressBlock checkoutProgressBlock:(void (^)(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps))checkoutProgressBlock error:(NSError **)error {
     IDTGitDirectory *gitDirectory = nil;
     NSError *gitSpecificError = nil;
     NSString *nameString = [NSString stringWithFormat:@"Documents/%@",name];
-    NSURL *fileURL = [NSURL fileURLWithPath:[NSHomeDirectory() stringByAppendingPathComponent:nameString]];
-    
-    GTRepository *repo = [GTRepository cloneFromURL:url toWorkingDirectory:fileURL barely:bare withCheckout:checkout error:&gitSpecificError transferProgressBlock:^(const git_transfer_progress *transferProgress) {
-       
-    } checkoutProgressBlock:^(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps) {
-        NSLog(@"does this work? %d and %d",completedSteps,totalSteps);
-    }];
+    NSURL *directoryURL = [NSURL fileURLWithPath:[NSHomeDirectory() stringByAppendingPathComponent:nameString]];
+    NSDictionary *options = @{GTRepositoryCloneOptionsTransportFlags:@(1), GTRepositoryCloneOptionsCheckout :@(checkout), GTRepositoryCloneOptionsBare:@(bare) };
+   
+    GTRepository *repo = [GTRepository cloneFromURL:url toWorkingDirectory:directoryURL options:options error:error transferProgressBlock:transferProgressBlock checkoutProgressBlock:checkoutProgressBlock];
     
     if (gitSpecificError) {
         if (error !=NULL) *error = gitSpecificError;
         return nil;
     } else {
         gitDirectory = [[IDTGitDirectory alloc]initWithRepo:repo];
+        //FIXME: Provide option to turn this method off
+//        if (![gitDirectory initializeSubmodulesError:error]) {
+//            NSLog(@"init of submodules failed! %@",*error);
+//        }
         return gitDirectory;
     }
+    
 }
 
--(void)downloadSubmodules {
+
+-(BOOL)initializeSubmodulesError:(NSError **)error {
     [self.repo enumerateSubmodulesRecursively:YES usingBlock:^(GTSubmodule *submodule, BOOL *stop) {
-        NSError *error = nil;
-        [submodule writeToParentConfigurationDestructively:NO error:&error];
-        if (!error) {
-
-        }else {
-            NSLog(@"Error is %@",error);
-
+        NSError *second = nil;
+        [submodule writeToParentConfigurationDestructively:YES error:&second];
+        if (!second) {
+                   } else {
+            
         }
     }];
+    return YES;
 }
-
-
 
 -(BOOL)isDirectoryURL:(NSURL *)objectURL {
     NSFileManager *fileManager = [NSFileManager defaultManager];

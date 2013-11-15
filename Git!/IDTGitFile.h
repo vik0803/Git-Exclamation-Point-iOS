@@ -10,8 +10,8 @@
 
 @interface IDTGitFile : IDTGitObject
 
-@property (nonatomic,strong) IDTDocument *document;
-@property (nonatomic) GTRepositoryFileStatus gitStatus;
+@property (nonatomic, strong) IDTDocument *document;
+@property (nonatomic, strong) GTStatusDelta *gitStatus;
 
 -(instancetype)initWithFileURL:(NSURL *)fileURL gitRepo:(GTRepository *)repo;
 

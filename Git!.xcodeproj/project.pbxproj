@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		200B0C3017AB778A00E4C426 /* ObjectiveCLang.plist in Resources */ = {isa = PBXBuildFile; fileRef = 200B0C2F17AB778A00E4C426 /* ObjectiveCLang.plist */; };
 		200CAB5217C823A100DB04CC /* IDTSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200CAB5117C823A100DB04CC /* IDTSplitViewController.m */; };
+		20192EC9183456A600CE3837 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 20192EC8183456A600CE3837 /* libiconv.dylib */; };
 		201BB27617C57796009EF77E /* IDTGitFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BB27517C57796009EF77E /* IDTGitFile.m */; };
 		201BCC791780E57100F8CA32 /* IDTGitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC781780E57100F8CA32 /* IDTGitObject.m */; };
 		201BCC7B1780E5FC00F8CA32 /* IDTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */; };
+		201EA58A180BB27A0046D41B /* IDTCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 201EA589180BB27A0046D41B /* IDTCommitViewController.m */; };
+		204754211829E0C6005372F7 /* IDTBranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204754201829E0C6005372F7 /* IDTBranchTableViewController.m */; };
 		2060499117950859005C65AC /* IDTGitDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2060499017950859005C65AC /* IDTGitDirectory.m */; };
 		2060499217950859005C65AC /* IDTGitDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2060499017950859005C65AC /* IDTGitDirectory.m */; };
+		2071144618066E2200B379E5 /* ObjectiveGit.h in Resources */ = {isa = PBXBuildFile; fileRef = 2071144418066E2200B379E5 /* ObjectiveGit.h */; };
+		2071144718066E2200B379E5 /* ObjectiveGit.m in Resources */ = {isa = PBXBuildFile; fileRef = 2071144518066E2200B379E5 /* ObjectiveGit.m */; };
+		208161E618344FB500854001 /* libObjectiveGit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A6A1D11804EAC300342D54 /* libObjectiveGit-iOS.a */; };
+		209144F6180BB8B3003D5012 /* IDTStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209144F5180BB8B3003D5012 /* IDTStatusViewController.m */; };
 		2091BCF917813DD100858B97 /* IDTFileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2091BCF817813DD100858B97 /* IDTFileEditViewController.m */; };
 		2091BCFC17813E0100858B97 /* IDTFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2091BCFB17813E0100858B97 /* IDTFileViewController.m */; };
 		209570161798E98700FDF3AD /* IDTRepositoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209570151798E98700FDF3AD /* IDTRepositoryTableViewController.m */; };
@@ -32,21 +39,34 @@
 		2095CFC7177F4E9E00D34A8A /* Git_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2095CFC6177F4E9E00D34A8A /* Git_Tests.m */; };
 		209E8DB71799111700A8C77A /* IDTCreateRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209E8DB61799111700A8C77A /* IDTCreateRepoViewController.m */; };
 		20C347AD17B07BBD00A9EED5 /* IDTComponentToHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C347AC17B07BBD00A9EED5 /* IDTComponentToHighlight.m */; };
+		20C5E33118088228003BA1F4 /* IDTChooseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C5E33018088228003BA1F4 /* IDTChooseCollectionViewController.m */; };
 		20C76900177F99AF00C3449F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C768FF177F99AF00C3449F /* libz.dylib */; };
+		20DCBF411832ED630047D9EA /* IDTBranchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DCBF401832ED630047D9EA /* IDTBranchManager.m */; };
 		20E1324D1783C46900B547D3 /* IDTDiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E1324C1783C46900B547D3 /* IDTDiffViewController.m */; };
-		20F21F5A17D843490008FE61 /* libObjectiveGit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F21F5517D8412F0008FE61 /* libObjectiveGit-iOS.a */; };
-		20F21F5E17D844EE0008FE61 /* ObjectiveGit.m in Resources */ = {isa = PBXBuildFile; fileRef = 20F21F5C17D844EE0008FE61 /* ObjectiveGit.m */; };
-		20F21F6717D916C90008FE61 /* ObjectiveGit.h in Resources */ = {isa = PBXBuildFile; fileRef = 20F21F5B17D844EE0008FE61 /* ObjectiveGit.h */; };
 		20F7E71317A0461900B10C73 /* IDTTextStorageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		208161E318344F9B00854001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F6CBB45317FFD50500404926;
+			remoteInfo = "ObjectiveGit-iOS-arm64";
+		};
 		2095CFBE177F4E9E00D34A8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2095CF90177F4E9E00D34A8A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2095CF97177F4E9E00D34A8A;
 			remoteInfo = "Git!";
+		};
+		20A6A1D01804EAC300342D54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6CBB4A417FFD50500404926;
+			remoteInfo = "ObjectiveGit-iOS-arm64";
 		};
 		20F21F5017D8412F0008FE61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -69,27 +89,29 @@
 			remoteGlobalIDString = 04DB4645133AB57600D9C624;
 			remoteInfo = "ObjectiveGit-iOS";
 		};
-		20F21F5817D843090008FE61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 04DB4644133AB57600D9C624;
-			remoteInfo = "ObjectiveGit-iOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		200B0C2F17AB778A00E4C426 /* ObjectiveCLang.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ObjectiveCLang.plist; sourceTree = "<group>"; };
 		200CAB5017C823A100DB04CC /* IDTSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTSplitViewController.h; sourceTree = "<group>"; };
 		200CAB5117C823A100DB04CC /* IDTSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTSplitViewController.m; sourceTree = "<group>"; };
+		20192EC8183456A600CE3837 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		201BB27417C57796009EF77E /* IDTGitFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTGitFile.h; sourceTree = "<group>"; };
 		201BB27517C57796009EF77E /* IDTGitFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitFile.m; sourceTree = "<group>"; };
 		201BCC771780E57100F8CA32 /* IDTGitObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTGitObject.h; sourceTree = "<group>"; };
 		201BCC781780E57100F8CA32 /* IDTGitObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitObject.m; sourceTree = "<group>"; };
 		201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTDocument.m; sourceTree = "<group>"; };
 		201BCC7C1780E60F00F8CA32 /* IDTDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDTDocument.h; sourceTree = "<group>"; };
+		201EA588180BB27A0046D41B /* IDTCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTCommitViewController.h; sourceTree = "<group>"; };
+		201EA589180BB27A0046D41B /* IDTCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTCommitViewController.m; sourceTree = "<group>"; };
+		2047541F1829E0C6005372F7 /* IDTBranchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTBranchTableViewController.h; sourceTree = "<group>"; };
+		204754201829E0C6005372F7 /* IDTBranchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTBranchTableViewController.m; sourceTree = "<group>"; };
 		2060498F17950859005C65AC /* IDTGitDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTGitDirectory.h; sourceTree = "<group>"; };
 		2060499017950859005C65AC /* IDTGitDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitDirectory.m; sourceTree = "<group>"; };
+		2071144418066E2200B379E5 /* ObjectiveGit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ObjectiveGit.h; path = "../objective-git/Classes/ObjectiveGit.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		2071144518066E2200B379E5 /* ObjectiveGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveGit.m; path = "../objective-git/Classes/ObjectiveGit.m"; sourceTree = "<group>"; };
+		209144F4180BB8B3003D5012 /* IDTStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTStatusViewController.h; sourceTree = "<group>"; };
+		209144F5180BB8B3003D5012 /* IDTStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTStatusViewController.m; sourceTree = "<group>"; };
 		2091BCF717813DD100858B97 /* IDTFileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTFileEditViewController.h; sourceTree = "<group>"; };
 		2091BCF817813DD100858B97 /* IDTFileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTFileEditViewController.m; sourceTree = "<group>"; };
 		2091BCFA17813E0100858B97 /* IDTFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTFileViewController.h; sourceTree = "<group>"; };
@@ -117,12 +139,14 @@
 		209E8DB61799111700A8C77A /* IDTCreateRepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTCreateRepoViewController.m; sourceTree = "<group>"; };
 		20C347AB17B07BBD00A9EED5 /* IDTComponentToHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTComponentToHighlight.h; sourceTree = "<group>"; };
 		20C347AC17B07BBD00A9EED5 /* IDTComponentToHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTComponentToHighlight.m; sourceTree = "<group>"; };
+		20C5E32F18088228003BA1F4 /* IDTChooseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTChooseCollectionViewController.h; sourceTree = "<group>"; };
+		20C5E33018088228003BA1F4 /* IDTChooseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTChooseCollectionViewController.m; sourceTree = "<group>"; };
 		20C768FF177F99AF00C3449F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		20DCBF3F1832ED630047D9EA /* IDTBranchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTBranchManager.h; sourceTree = "<group>"; };
+		20DCBF401832ED630047D9EA /* IDTBranchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTBranchManager.m; sourceTree = "<group>"; };
 		20E1324B1783C46900B547D3 /* IDTDiffViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTDiffViewController.h; sourceTree = "<group>"; };
 		20E1324C1783C46900B547D3 /* IDTDiffViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTDiffViewController.m; sourceTree = "<group>"; };
 		20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		20F21F5B17D844EE0008FE61 /* ObjectiveGit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ObjectiveGit.h; path = "../objective-git/Classes/ObjectiveGit.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		20F21F5C17D844EE0008FE61 /* ObjectiveGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveGit.m; path = "../objective-git/Classes/ObjectiveGit.m"; sourceTree = "<group>"; };
 		20F7E71117A0461900B10C73 /* IDTTextStorageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTTextStorageDelegate.h; sourceTree = "<group>"; };
 		20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTTextStorageDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,7 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F21F5A17D843490008FE61 /* libObjectiveGit-iOS.a in Frameworks */,
+				20192EC9183456A600CE3837 /* libiconv.dylib in Frameworks */,
+				208161E618344FB500854001 /* libObjectiveGit-iOS.a in Frameworks */,
 				20C76900177F99AF00C3449F /* libz.dylib in Frameworks */,
 				2095CF9E177F4E9E00D34A8A /* CoreGraphics.framework in Frameworks */,
 				2095CFA0177F4E9E00D34A8A /* UIKit.framework in Frameworks */,
@@ -156,12 +181,12 @@
 		201BCC7D1780E61A00F8CA32 /* Git (Model) */ = {
 			isa = PBXGroup;
 			children = (
-				20F21F5B17D844EE0008FE61 /* ObjectiveGit.h */,
-				20F21F5C17D844EE0008FE61 /* ObjectiveGit.m */,
+				2071144418066E2200B379E5 /* ObjectiveGit.h */,
+				2071144518066E2200B379E5 /* ObjectiveGit.m */,
 				201BCC771780E57100F8CA32 /* IDTGitObject.h */,
+				201BCC781780E57100F8CA32 /* IDTGitObject.m */,
 				201BB27417C57796009EF77E /* IDTGitFile.h */,
 				201BB27517C57796009EF77E /* IDTGitFile.m */,
-				201BCC781780E57100F8CA32 /* IDTGitObject.m */,
 				2060498F17950859005C65AC /* IDTGitDirectory.h */,
 				2060499017950859005C65AC /* IDTGitDirectory.m */,
 			);
@@ -175,6 +200,21 @@
 				2095CFAB177F4E9E00D34A8A /* IDTAppDelegate.m */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		209144FE180BB8BE003D5012 /* Commit Workflow */ = {
+			isa = PBXGroup;
+			children = (
+				201EA588180BB27A0046D41B /* IDTCommitViewController.h */,
+				201EA589180BB27A0046D41B /* IDTCommitViewController.m */,
+				209144F4180BB8B3003D5012 /* IDTStatusViewController.h */,
+				209144F5180BB8B3003D5012 /* IDTStatusViewController.m */,
+				20C5E32F18088228003BA1F4 /* IDTChooseCollectionViewController.h */,
+				20C5E33018088228003BA1F4 /* IDTChooseCollectionViewController.m */,
+				20E1324B1783C46900B547D3 /* IDTDiffViewController.h */,
+				20E1324C1783C46900B547D3 /* IDTDiffViewController.m */,
+			);
+			name = "Commit Workflow";
 			sourceTree = "<group>";
 		};
 		2095CF8F177F4E9E00D34A8A = {
@@ -199,6 +239,7 @@
 		2095CF9A177F4E9E00D34A8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20192EC8183456A600CE3837 /* libiconv.dylib */,
 				20C768FF177F99AF00C3449F /* libz.dylib */,
 				2095CF9B177F4E9E00D34A8A /* Foundation.framework */,
 				2095CF9D177F4E9E00D34A8A /* CoreGraphics.framework */,
@@ -214,19 +255,16 @@
 				20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */,
 				20C347AA17B07A9400A9EED5 /* Text (Model Layer) */,
 				201BCC7D1780E61A00F8CA32 /* Git (Model) */,
+				209144FE180BB8BE003D5012 /* Commit Workflow */,
+				20DCBF491832ED800047D9EA /* Branch Management */,
 				200CAB5017C823A100DB04CC /* IDTSplitViewController.h */,
 				200CAB5117C823A100DB04CC /* IDTSplitViewController.m */,
-				2091BCFA17813E0100858B97 /* IDTFileViewController.h */,
-				2091BCFB17813E0100858B97 /* IDTFileViewController.m */,
 				209E8DB51799111700A8C77A /* IDTCreateRepoViewController.h */,
 				209E8DB61799111700A8C77A /* IDTCreateRepoViewController.m */,
 				2091BCF717813DD100858B97 /* IDTFileEditViewController.h */,
 				2091BCF817813DD100858B97 /* IDTFileEditViewController.m */,
-				20E1324B1783C46900B547D3 /* IDTDiffViewController.h */,
-				20E1324C1783C46900B547D3 /* IDTDiffViewController.m */,
 				2095CFAD177F4E9E00D34A8A /* Main.storyboard */,
-				209570141798E98700FDF3AD /* IDTRepositoryTableViewController.h */,
-				209570151798E98700FDF3AD /* IDTRepositoryTableViewController.m */,
+				20BE04F41824A9F600867ED0 /* File Navigation */,
 				2095CFB3177F4E9E00D34A8A /* Images.xcassets */,
 				201BCC7E1780E66900F8CA32 /* Misc */,
 				2095CFA2177F4E9E00D34A8A /* Supporting Files */,
@@ -264,11 +302,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		20BE04F41824A9F600867ED0 /* File Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				209570141798E98700FDF3AD /* IDTRepositoryTableViewController.h */,
+				209570151798E98700FDF3AD /* IDTRepositoryTableViewController.m */,
+				2091BCFA17813E0100858B97 /* IDTFileViewController.h */,
+				2091BCFB17813E0100858B97 /* IDTFileViewController.m */,
+			);
+			name = "File Navigation";
+			sourceTree = "<group>";
+		};
 		20C347AA17B07A9400A9EED5 /* Text (Model Layer) */ = {
 			isa = PBXGroup;
 			children = (
-				201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */,
 				201BCC7C1780E60F00F8CA32 /* IDTDocument.h */,
+				201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */,
 				20F7E71117A0461900B10C73 /* IDTTextStorageDelegate.h */,
 				20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */,
 				20C347AB17B07BBD00A9EED5 /* IDTComponentToHighlight.h */,
@@ -277,12 +326,24 @@
 			name = "Text (Model Layer)";
 			sourceTree = "<group>";
 		};
+		20DCBF491832ED800047D9EA /* Branch Management */ = {
+			isa = PBXGroup;
+			children = (
+				20DCBF3F1832ED630047D9EA /* IDTBranchManager.h */,
+				20DCBF401832ED630047D9EA /* IDTBranchManager.m */,
+				2047541F1829E0C6005372F7 /* IDTBranchTableViewController.h */,
+				204754201829E0C6005372F7 /* IDTBranchTableViewController.m */,
+			);
+			name = "Branch Management";
+			sourceTree = "<group>";
+		};
 		20F21F4617D8412E0008FE61 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				20F21F5117D8412F0008FE61 /* ObjectiveGit.framework */,
 				20F21F5317D8412F0008FE61 /* ObjectiveGitTests.octest */,
 				20F21F5517D8412F0008FE61 /* libObjectiveGit-iOS.a */,
+				20A6A1D11804EAC300342D54 /* libObjectiveGit-iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,7 +362,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				20F21F5917D843090008FE61 /* PBXTargetDependency */,
+				208161E418344F9B00854001 /* PBXTargetDependency */,
 			);
 			name = "Git!";
 			productName = "Git!";
@@ -367,6 +428,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		20A6A1D11804EAC300342D54 /* libObjectiveGit-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjectiveGit-iOS.a";
+			remoteRef = 20A6A1D01804EAC300342D54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		20F21F5117D8412F0008FE61 /* ObjectiveGit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -395,12 +463,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F21F6717D916C90008FE61 /* ObjectiveGit.h in Resources */,
-				20F21F5E17D844EE0008FE61 /* ObjectiveGit.m in Resources */,
 				2095CFB4177F4E9E00D34A8A /* Images.xcassets in Resources */,
 				2095CFA6177F4E9E00D34A8A /* InfoPlist.strings in Resources */,
+				2071144718066E2200B379E5 /* ObjectiveGit.m in Resources */,
 				200B0C3017AB778A00E4C426 /* ObjectiveCLang.plist in Resources */,
 				2095CFAF177F4E9E00D34A8A /* Main.storyboard in Resources */,
+				2071144618066E2200B379E5 /* ObjectiveGit.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,16 +490,21 @@
 				2095CFAC177F4E9E00D34A8A /* IDTAppDelegate.m in Sources */,
 				2091BCF917813DD100858B97 /* IDTFileEditViewController.m in Sources */,
 				2060499117950859005C65AC /* IDTGitDirectory.m in Sources */,
+				204754211829E0C6005372F7 /* IDTBranchTableViewController.m in Sources */,
 				20C347AD17B07BBD00A9EED5 /* IDTComponentToHighlight.m in Sources */,
 				200CAB5217C823A100DB04CC /* IDTSplitViewController.m in Sources */,
 				20E1324D1783C46900B547D3 /* IDTDiffViewController.m in Sources */,
 				209570161798E98700FDF3AD /* IDTRepositoryTableViewController.m in Sources */,
 				20F7E71317A0461900B10C73 /* IDTTextStorageDelegate.m in Sources */,
 				201BCC791780E57100F8CA32 /* IDTGitObject.m in Sources */,
+				209144F6180BB8B3003D5012 /* IDTStatusViewController.m in Sources */,
 				201BCC7B1780E5FC00F8CA32 /* IDTDocument.m in Sources */,
 				2095CFA8177F4E9E00D34A8A /* main.m in Sources */,
+				20DCBF411832ED630047D9EA /* IDTBranchManager.m in Sources */,
 				209E8DB71799111700A8C77A /* IDTCreateRepoViewController.m in Sources */,
 				201BB27617C57796009EF77E /* IDTGitFile.m in Sources */,
+				201EA58A180BB27A0046D41B /* IDTCommitViewController.m in Sources */,
+				20C5E33118088228003BA1F4 /* IDTChooseCollectionViewController.m in Sources */,
 				2091BCFC17813E0100858B97 /* IDTFileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,15 +521,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		208161E418344F9B00854001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectiveGit-iOS-arm64";
+			targetProxy = 208161E318344F9B00854001 /* PBXContainerItemProxy */;
+		};
 		2095CFBF177F4E9E00D34A8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2095CF97177F4E9E00D34A8A /* Git! */;
 			targetProxy = 2095CFBE177F4E9E00D34A8A /* PBXContainerItemProxy */;
-		};
-		20F21F5917D843090008FE61 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ObjectiveGit-iOS";
-			targetProxy = 20F21F5817D843090008FE61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -576,8 +649,8 @@
 				INFOPLIST_FILE = "Git!/Git!-Info.plist";
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)../Libs/objective-git/libgit2/include/** $(BUILT_PRODUCTS_DIR)/usr/local/include/** /Users/EandZ/Desktop/EveryThing/objective-git/libgit2/include/** /Users/EandZ/Desktop/EveryThing/objective-git/libgit2/include/git2";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include/** $(SRCROOT)../Libs/objective-git/libgit2/include/** $(SRCROOT)/objective-git/libgit2/include/** /Users/EandZ/Desktop/EveryThing/objective-git/libgit2/include/git2";
+				USER_HEADER_SEARCH_PATHS = "/Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include/** $(BUILT_PRODUCTS_DIR)/usr/local/include/**";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include/** /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include/**";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -596,6 +669,8 @@
 				INFOPLIST_FILE = "Git!/Git!-Info.plist";
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)../Libs/objective-git/libgit2/include $(BUILT_PRODUCTS_DIR)/usr/local/include/** /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include/** $(SRCROOT)../Libs/objective-git/External/libgit2/include/** /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include/**";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
