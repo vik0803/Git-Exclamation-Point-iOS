@@ -47,12 +47,9 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
 
 
 -(void)performReplacementsForCharacterChangeInRange:(NSRange)changedRange {
-    NSRange extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(changedRange.location, 0)]);
-    extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(NSMaxRange(changedRange), 0)]);
-    //if (arc4random() % 5 == 1) {
+    NSRange extendedRange = NSUnionRange(changedRange, [[_backingStore string] lineRangeForRange:NSMakeRange(NSMaxRange(changedRange), 0)]);
     [self applyTokenAttributesToRange:extendedRange];
-    //}
-
+    
 
 }
 
