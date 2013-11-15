@@ -29,10 +29,14 @@
 
 // Called whenever the application reads data from the file system
 - (BOOL)loadFromContents:(id)contents ofType:(NSString *)typeName error:(NSError **)outError {
-    if ([contents length] > 0)
-        self.userText = [[NSString alloc]initWithBytes:[contents bytes] length:[contents length] encoding:NSUTF8StringEncoding];
-    else {
-        self.userText = @"Empty";
+    if ([contents respondsToSelector:@selector(length)]) {
+        if ([contents length] > 0)
+            self.userText = [[NSString alloc]initWithBytes:[contents bytes] length:[contents length] encoding:NSUTF8StringEncoding];
+        else {
+            self.userText = @"";
+        }
+    } else {
+        return NO;
     }
     if ([self.fileType isEqualToString:@"public.rtf"]) {
         self.attributedText = [[NSAttributedString alloc]initWithData:contents options:nil documentAttributes:nil error:nil];
