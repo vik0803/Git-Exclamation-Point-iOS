@@ -72,6 +72,8 @@
 		<string>blueColor</string>
 		<key>id</key>
 		<string>blueColor</string>
+		<key>instancetype</key>
+		<string>blueColor</string>
 		<key>Class</key>
 		<string>redColor</string>
 		<key>SEL</key>
@@ -1538,7 +1540,7 @@
 		<string>purpleColor</string>
 		<key>UIWebViewDelegate</key>
 		<string>purpleColor</string>
-		<key>URBarStyle</key>
+		<key>UIBarStyle</key>
 		<string>purpleColor</string>
 		<key>UIDataDetectorTypes</key>
 		<string>purpleColor</string>
