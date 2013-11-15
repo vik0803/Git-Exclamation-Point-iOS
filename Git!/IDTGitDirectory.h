@@ -21,5 +21,6 @@
 
 -(BOOL)delete;
 
-+(IDTGitDirectory *)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout error:(NSError **)error;
++(IDTGitDirectory *)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout transferProgressBlock:(void (^)(const git_transfer_progress *transfer_progress))transferProgressBlock checkoutProgressBlock:(void (^)(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps))checkoutProgressBlock error:(NSError **)error;
+
 @end
