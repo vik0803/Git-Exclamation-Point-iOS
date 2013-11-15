@@ -26,6 +26,7 @@
 {
     UISplitViewController *splitVC = (UISplitViewController *)self.window.rootViewController;
     IDTFileEditViewController *fileEditVC = [splitVC.viewControllers lastObject];
+    // FIXME: This is dependent on a viewController which is can cause a crash.
     [fileEditVC closeDocument];
 
 }
