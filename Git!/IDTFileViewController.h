@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ObjectiveGit.h"
 #import "IDTGitDirectory.h"
-@interface IDTFileViewController : UITableViewController
+@interface IDTFileViewController : UITableViewController <UIAlertViewDelegate>
+
 @property (nonatomic,strong) IDTGitDirectory *gitDirectory;
 
 @end
