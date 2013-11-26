@@ -12,7 +12,6 @@
 
 @property (nonatomic,strong) NSArray *statusDeltas;
 
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
