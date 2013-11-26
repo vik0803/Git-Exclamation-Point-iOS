@@ -47,17 +47,50 @@
 }
 
 -(NSString *)description {
-    return [NSString stringWithFormat:@"The document is %@ \r The Name is %@ \r The gitStatus is %@ \r and The repo is %@ ",self.document,self.name,self.gitStatus,self.repo];
+    return [NSString stringWithFormat:@"The document is %@ \r The Name is %@ \r The gitStatus is %d \r and The repo is %@ ",self.document,self.name,self.gitStatus,self.repo];
 }
 
--(GTStatusDelta *)gitStatus {
-    __block GTStatusDelta *delta = nil;
-    [self.repo enumerateFileStatusWithOptions:nil error:nil usingBlock:^(GTStatusDelta *headToIndex, GTStatusDelta *indexToWorkingDirectory, BOOL *stop) {
-        if ([self.repo.fileURL.path stringByAppendingPathComponent:headToIndex.oldFile.path] && self.document.fileURL.path) {
-            delta = headToIndex;
-        }
-    }];
-    return delta;
+-(GTFileStatusFlags)gitStatus {
+    NSError *error = nil;
+    BOOL success = 0;
+    NSString *intermediaryString = [self.document.fileURL.path stringByReplacingOccurrencesOfString:self.repo.fileURL.path withString:@""];
+    //Cut the / at the beginning of the path.
+    NSString *reletiveString = [intermediaryString substringFromIndex:1];
+    GTFileStatusFlags flags = [self.repo statusForFile:[NSURL URLWithString:reletiveString] success:&success error:&error];
+    if (success) {
+        return flags;
+    } else {
+        return 0;
+    }
 }
+
+-(UIColor *)colorFromStatus {
+    switch (self.gitStatus) {
+        case GTFileStatusModifiedInIndex:
+            return [UIColor blueColor];
+            break;
+        case GTFileStatusModifiedInWorktree:
+            return [UIColor blueColor];
+            break;
+        case GTFileStatusDeletedInIndex:
+            return [UIColor redColor];
+            break;
+        case GTFileStatusDeletedInWorktree:
+            return [UIColor blueColor];
+            break;
+        case GTFileStatusNewInIndex:
+            return [UIColor greenColor];
+            break;
+        case GTFileStatusNewInWorktree:
+            return [UIColor greenColor];
+            break;
+        case GTFileStatusIgnored:
+            return [UIColor lightGrayColor];
+        default:
+            return [UIColor blackColor];
+            break;
+    }
+}
+
 
 @end

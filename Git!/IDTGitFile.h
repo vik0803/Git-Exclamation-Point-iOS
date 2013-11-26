@@ -11,10 +11,12 @@
 @interface IDTGitFile : IDTGitObject
 
 @property (nonatomic, strong) IDTDocument *document;
-@property (nonatomic, strong) GTStatusDelta *gitStatus;
+@property (nonatomic) GTFileStatusFlags gitStatus;
 
 -(instancetype)initWithFileURL:(NSURL *)fileURL gitRepo:(GTRepository *)repo;
 
 +(instancetype)createWithURL:(NSURL *)fileURL andRepo:(GTRepository *)repo;
+
+-(UIColor *)colorFromStatus;
 
 @end
