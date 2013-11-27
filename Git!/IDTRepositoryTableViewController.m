@@ -16,15 +16,6 @@
 
 @implementation IDTRepositoryTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,7 +29,6 @@
         }
     }
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewRepo:)];
-;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,19 +38,11 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.gitDirectories count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"cellReuseRepo";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -69,7 +51,7 @@
     
     return cell;
 }
--(NSArray *)arrayOfFoldersInFolder:(NSString *) folder {
+-(NSArray *)arrayOfFoldersInFolder:(NSString *)folder {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSArray* files = [fileManager contentsOfDirectoryAtPath:folder error:nil];
 	NSMutableArray *directoryList = [NSMutableArray arrayWithCapacity:10];
@@ -86,8 +68,7 @@
 	return directoryList;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         IDTGitDirectory *gitDirectory = self.gitDirectories[indexPath.row];
         [self.gitDirectories removeObject:gitDirectory];
@@ -103,13 +84,11 @@
 
 #pragma mark - Navigation
 
--(void)createNewRepo:(id)sender
-{
+-(void)createNewRepo:(id)sender {
     [self performSegueWithIdentifier:@"segueToCreateRepo" sender:self];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"segueToFiles"]) {
         IDTFileViewController *fileVC = [segue destinationViewController];
         IDTGitDirectory *gitDirectory = self.gitDirectories[[self.tableView indexPathForSelectedRow].row];
@@ -120,6 +99,5 @@
     }
     
 }
-
 
 @end
