@@ -30,15 +30,6 @@
 
 @implementation IDTFileEditViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -68,6 +59,16 @@
     [self.gitFile.document updateChangeCount:UIDocumentChangeDone];
 }
 
+-(void)openDocument {
+    if (self.gitFile.document.documentState == UIDocumentStateClosed) {
+        self.textView.editable = NO;
+        [self.gitFile.document openWithCompletionHandler:^(BOOL success) {
+            self.textView.text = self.gitFile.document.userText;
+            self.textView.editable = YES;
+        }];
+    }
+}
+
 -(void)closeDocument {
     if (self.gitFile) {
         if (self.gitFile.document.documentState == UIDocumentStateNormal) {
@@ -79,14 +80,6 @@
                 }
             }];
         }
-    }
-}
-
--(void)openDocument {
-    if (self.gitFile.document.documentState == UIDocumentStateClosed) {
-        [self.gitFile.document openWithCompletionHandler:^(BOOL success) {
-            self.textView.text = self.gitFile.document.userText;
-        }];
     }
 }
 
@@ -106,7 +99,6 @@
         IDTBranchManager *branchManager = [[IDTBranchManager alloc]initWithPopoverController:popoverController repo:self.gitFile.repo];
         branchTableViewController.branchManager = branchManager;
         branchTableViewController.tableView.dataSource = branchManager;
-        
     }
 }
 
