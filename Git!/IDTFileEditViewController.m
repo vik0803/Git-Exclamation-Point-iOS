@@ -106,6 +106,7 @@
     if ([identifier isEqualToString:@"segueToPopover"] && self.isDisplyingPopover) {
         return NO;
     } else {
+        [self.textView endEditing:YES];
         return YES;
     }
 }
