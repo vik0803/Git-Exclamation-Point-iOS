@@ -7,7 +7,7 @@
 //
 
 #import "IDTGitFile.h"
-
+#import "NSError+AlertView.h"
 @implementation IDTGitFile
 -(instancetype)initWithFileURL:(NSURL *)fileURL gitRepo:(GTRepository *)repo {
     NSParameterAssert(repo!=nil);
@@ -20,25 +20,43 @@
         
     return self;
 }
-
+// TODO: Test this method.
 +(instancetype)createWithURL:(NSURL *)fileURL andRepo:(GTRepository *)repo {
     if (![[NSFileManager defaultManager]createFileAtPath:fileURL.path contents:nil attributes:nil]) return nil;
-    GTIndex *index = [repo indexWithError:nil];
-    NSString *reletivePath = [fileURL.path stringByReplacingOccurrencesOfString:repo.fileURL.path withString:@""];
+    NSError *error = nil;
     
-    [index addFile:reletivePath error:nil];
-    [index write:nil];
+    GTIndex *index = [repo indexWithError:&error];
+    if (error) {
+        [error showErrorInAlertView];
+    }
+    NSString *intermediaryString = [fileURL.path stringByReplacingOccurrencesOfString:repo.fileURL.path withString:@""];
+    //Cut the / at the beginning of the path.
+    NSString *reletiveString = [intermediaryString substringFromIndex:1];
+    [index addFile:reletiveString error:&error];
+    if (error) {
+        [error showErrorInAlertView];
+    }
+    [index write:&error];
+    if (error) {
+        [error showErrorInAlertView];
+    }
     
     return [[IDTGitFile alloc]initWithFileURL:fileURL gitRepo:repo];
     
 }
-
--(BOOL)delete {
+// TODO: Test this method.
+-(BOOL)delete:(NSError **)error {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL success = [fileManager removeItemAtURL:self.document.fileURL error:nil];
+    BOOL success = [fileManager removeItemAtURL:self.document.fileURL error:error];
+    if (!success) {
+        return NO;
+    }
     GTIndex *index = [self.repo indexWithError:nil];
-    NSString *reletivePath = [self.document.fileURL.path stringByReplacingOccurrencesOfString:self.repo.fileURL.path withString:@""];
-    if ([index removeFile:reletivePath error:nil] && success) {
+    NSString *intermediaryString = [self.document.fileURL.path stringByReplacingOccurrencesOfString:self.repo.fileURL.path withString:@""];
+    //Cut the / at the beginning of the path.
+    NSString *reletivePath = [intermediaryString substringFromIndex:1];
+    if ([index removeFile:reletivePath error:error]) {
+        [index write:nil];
         return YES;
     } else {
         return NO;

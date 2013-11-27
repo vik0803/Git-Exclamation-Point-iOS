@@ -10,6 +10,7 @@
 #import "IDTGitDirectory.h"
 #import "ObjectiveGit.h"
 #import <IDTFileViewController.h>
+#import "NSError+AlertView.h"
 @interface IDTRepositoryTableViewController ()
 @end
 
@@ -91,8 +92,13 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         IDTGitDirectory *gitDirectory = self.gitDirectories[indexPath.row];
         [self.gitDirectories removeObject:gitDirectory];
-        [gitDirectory delete];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSError *error = nil;
+        [gitDirectory delete:&error];
+        if (error) {
+            [error showErrorInAlertView];
+        } else {
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
     }
 }
 

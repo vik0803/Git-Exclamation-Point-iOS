@@ -96,17 +96,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-         IDTGitObject *gitObject = self.gitDirectory.gitObjects[indexPath.row];
-         BOOL success = [gitObject delete];
-         if (success) {
+        IDTGitObject *gitObject = self.gitDirectory.gitObjects[indexPath.row];
+        NSError *error = nil;
+        BOOL success = [gitObject delete:&error];
+        if (success) {
              [self.gitDirectory.gitObjects removeObject:gitObject];
              [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-         } else {
-             NSLog(@"Error: Failure to remove file object. This error should not happen. Please email the developer.");
-         }
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error Deleting" message:[error description] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            [alertView show];
         }
+    }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
          [self.tableView reloadData];
         }

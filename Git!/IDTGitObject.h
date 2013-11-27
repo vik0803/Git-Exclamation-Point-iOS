@@ -17,11 +17,11 @@
 @property (nonatomic,strong) GTRepository *repo;
 
 //This is set by the subclass.
-@property (nonatomic) BOOL directory;
+@property (nonatomic, getter = isDirectory) BOOL directory;
 
 -(instancetype)initWithObjectURL:(NSURL *)objectURL;
 
--(BOOL)delete;
+-(BOOL)delete:(NSError **)error;
 
 -(NSString *)description;
 

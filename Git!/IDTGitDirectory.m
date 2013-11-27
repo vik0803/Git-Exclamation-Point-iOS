@@ -82,13 +82,12 @@
     return objects;
 }
 
--(BOOL)delete {
+-(BOOL)delete:(NSError **)error {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error = nil;
     
-    BOOL sucess = [fileManager removeItemAtURL:self.directoryURL error:&error];
+    BOOL sucess = [fileManager removeItemAtURL:self.directoryURL error:error];
     if (error) {
-        NSLog(@"error is %@",error);
+        NSLog(@"error is %@",*error);
         sucess = NO;
     }
     
@@ -138,6 +137,5 @@
     [fileManager fileExistsAtPath:objectURL.path isDirectory:&isDirectory];
     return isDirectory;
 }
-
 
 @end
