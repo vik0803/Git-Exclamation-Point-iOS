@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		200B0C3017AB778A00E4C426 /* ObjectiveCLang.plist in Resources */ = {isa = PBXBuildFile; fileRef = 200B0C2F17AB778A00E4C426 /* ObjectiveCLang.plist */; };
 		200CAB5217C823A100DB04CC /* IDTSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200CAB5117C823A100DB04CC /* IDTSplitViewController.m */; };
+		201534691836B90E007F51EA /* NSError+AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 201534681836B90D007F51EA /* NSError+AlertView.m */; };
 		20192EC9183456A600CE3837 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 20192EC8183456A600CE3837 /* libiconv.dylib */; };
 		201BB27617C57796009EF77E /* IDTGitFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BB27517C57796009EF77E /* IDTGitFile.m */; };
 		201BCC791780E57100F8CA32 /* IDTGitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC781780E57100F8CA32 /* IDTGitObject.m */; };
@@ -95,6 +96,8 @@
 		200B0C2F17AB778A00E4C426 /* ObjectiveCLang.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ObjectiveCLang.plist; sourceTree = "<group>"; };
 		200CAB5017C823A100DB04CC /* IDTSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTSplitViewController.h; sourceTree = "<group>"; };
 		200CAB5117C823A100DB04CC /* IDTSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTSplitViewController.m; sourceTree = "<group>"; };
+		201534671836B90D007F51EA /* NSError+AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+AlertView.h"; sourceTree = "<group>"; };
+		201534681836B90D007F51EA /* NSError+AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+AlertView.m"; sourceTree = "<group>"; };
 		20192EC8183456A600CE3837 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		201BB27417C57796009EF77E /* IDTGitFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTGitFile.h; sourceTree = "<group>"; };
 		201BB27517C57796009EF77E /* IDTGitFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitFile.m; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				2091BCF717813DD100858B97 /* IDTFileEditViewController.h */,
 				2091BCF817813DD100858B97 /* IDTFileEditViewController.m */,
 				2095CFAD177F4E9E00D34A8A /* Main.storyboard */,
+				201534671836B90D007F51EA /* NSError+AlertView.h */,
+				201534681836B90D007F51EA /* NSError+AlertView.m */,
 				20BE04F41824A9F600867ED0 /* File Navigation */,
 				2095CFB3177F4E9E00D34A8A /* Images.xcassets */,
 				201BCC7E1780E66900F8CA32 /* Misc */,
@@ -504,6 +509,7 @@
 				209E8DB71799111700A8C77A /* IDTCreateRepoViewController.m in Sources */,
 				201BB27617C57796009EF77E /* IDTGitFile.m in Sources */,
 				201EA58A180BB27A0046D41B /* IDTCommitViewController.m in Sources */,
+				201534691836B90E007F51EA /* NSError+AlertView.m in Sources */,
 				20C5E33118088228003BA1F4 /* IDTChooseCollectionViewController.m in Sources */,
 				2091BCFC17813E0100858B97 /* IDTFileViewController.m in Sources */,
 			);
