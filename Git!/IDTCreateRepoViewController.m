@@ -91,8 +91,9 @@
         [[NSFileManager defaultManager]createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:&error];
         if (error) {
             NSLog(@"error is %@",error);
+            error = nil;
         }
-        GTRepository *repo = [GTRepository initializeEmptyRepositoryAtFileURL:[NSURL fileURLWithPath:path] error:nil];
+        GTRepository *repo = [GTRepository initializeEmptyRepositoryAtFileURL:[NSURL fileURLWithPath:path] error:&error];
         if (repo) {
             gitRepository = [[IDTGitDirectory alloc]initWithRepo:repo];
         } else {
