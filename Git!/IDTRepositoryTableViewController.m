@@ -28,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO;
     self.gitDirectories = [[NSMutableArray alloc]initWithCapacity:10];
     NSArray *array = [self arrayOfFoldersInFolder:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
     for (NSString *folder in array) {
