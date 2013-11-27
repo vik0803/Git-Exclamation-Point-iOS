@@ -47,8 +47,12 @@
     GTBranch *branch = self.branches[indexPath.row];
     if ([branch isKindOfClass:[GTBranch class]]) {
         cell.textLabel.text = branch.shortName;
+        if (branch.branchType == GTBranchTypeRemote) {
+            NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:branch.shortName attributes:@{NSForegroundColorAttributeName: [UIColor redColor]}];
+            cell.textLabel.attributedText = attributedString;
+        }
     } else {
-        cell.textLabel.text = (NSString *)branch;
+        cell.textLabel.attributedText = [[NSAttributedString alloc]initWithString:(NSString *)branch attributes:@{NSForegroundColorAttributeName: [UIColor greenColor]}];
     }
     
     return cell;
