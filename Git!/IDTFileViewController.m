@@ -110,6 +110,6 @@
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
          [self.tableView reloadData];
         }
- }
+}
 
 @end
