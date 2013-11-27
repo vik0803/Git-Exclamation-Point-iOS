@@ -64,9 +64,7 @@
         NSError *error = nil;
         if ([branch deleteWithError:&error]) {
             [self.branches removeObjectAtIndex:indexPath.row];
-            
             [self.popoverController dismissPopoverAnimated:YES];
-            
         } else {
             NSLog(@"Error is %@",error);
         }
