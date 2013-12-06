@@ -18,7 +18,7 @@
 @implementation IDTDocument
 #pragma mark Initalizer
 
-- (id)initWithFileURL:(NSURL *)url {
+- (instancetype)initWithFileURL:(NSURL *)url {
     
     self = [super initWithFileURL:url];
     self.name = [url lastPathComponent];

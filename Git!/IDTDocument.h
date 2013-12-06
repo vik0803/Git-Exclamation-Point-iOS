@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 @interface IDTDocument : UIDocument
 
-#pragma mark Properties 
-- (id)initWithFileURL:(NSURL *)url;
+- (instancetype)initWithFileURL:(NSURL *)url;
 
-@property (strong,nonatomic) NSMutableArray *rangesOfHighlight;
-
+#pragma mark Properties
 @property (strong,nonatomic) NSString * userText;
 
 // Only works with .rtf files.
