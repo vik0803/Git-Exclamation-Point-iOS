@@ -21,7 +21,6 @@
         if (self.repo == nil || error != nil) return nil;
         self.directory = YES;
         self.gitObjects = [self enumerateGitObjectsURL:self.repo.fileURL];
-        
     }
 
     return self;
@@ -84,8 +83,8 @@
 
 -(BOOL)delete:(NSError **)error {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    
     BOOL sucess = [fileManager removeItemAtURL:self.directoryURL error:error];
+    
     if (error) {
         NSLog(@"error is %@",*error);
         sucess = NO;
