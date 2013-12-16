@@ -99,15 +99,6 @@
     }
 }
 
--(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:@"segueToPopover"] && self.isDisplyingPopover) {
-        return NO;
-    } else {
-        [self.textView endEditing:YES];
-        return YES;
-    }
-}
-
 #pragma mark PopoverController Delegate
 
 -(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
