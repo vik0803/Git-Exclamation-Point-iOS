@@ -82,6 +82,7 @@
 #pragma mark Navigation
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [self.textView endEditing:YES];
     if ([segue.identifier isEqualToString:@"segueToCommitWorkflow"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         IDTChooseCollectionViewController *chooseCollectionViewController = (IDTChooseCollectionViewController *)navigationController.topViewController;
