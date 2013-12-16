@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 //Credentials.
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-// A UISwitch wrapping a BOOL determiens weather or not the commit is also a push.
+// A UISwitch wrapping a BOOL. Determiens weather or not the commit is also a push.
 //TODO: Make this switch cause somthing to actualy happen.
 @property (weak, nonatomic) IBOutlet UISwitch *pushOnCommit;
 //The message of the commit.
