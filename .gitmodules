@@ -1,3 +1,4 @@
-[submodule "objective-git"]
+[submodule "Objective Git"]
 	path = objective-git
 	url = https://github.com/libgit2/objective-git.git
+	branch = master
