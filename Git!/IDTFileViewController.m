@@ -77,7 +77,6 @@
     }
 }
 
-
 -(void)createNewFile:(id)sender {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"New File" message:@"Create a New File" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create File",nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
@@ -110,7 +109,7 @@
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
          [self.tableView reloadData];
-        }
+    }
 }
 
 @end
