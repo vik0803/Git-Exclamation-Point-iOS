@@ -402,6 +402,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "E&Z Pierson";
 				TargetAttributes = {
+					2095CF97177F4E9E00D34A8A = {
+						DevelopmentTeam = R2HR4QQ5DH;
+					};
 					2095CFB8177F4E9E00D34A8A = {
 						TestTargetID = 2095CF97177F4E9E00D34A8A;
 					};
@@ -497,6 +500,7 @@
 				2060499117950859005C65AC /* IDTGitDirectory.m in Sources */,
 				204754211829E0C6005372F7 /* IDTBranchTableViewController.m in Sources */,
 				20C347AD17B07BBD00A9EED5 /* IDTComponentToHighlight.m in Sources */,
+				20C473F81847A2920051AB52 /* IDTCommit.m in Sources */,
 				200CAB5217C823A100DB04CC /* IDTSplitViewController.m in Sources */,
 				20E1324D1783C46900B547D3 /* IDTDiffViewController.m in Sources */,
 				209570161798E98700FDF3AD /* IDTRepositoryTableViewController.m in Sources */,
@@ -649,12 +653,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Git!/Git!-Prefix.pch";
 				INFOPLIST_FILE = "Git!/Git!-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "/Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include/** $(BUILT_PRODUCTS_DIR)/usr/local/include/**";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include/** /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include/**";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
@@ -669,12 +677,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Git!/Git!-Prefix.pch";
 				INFOPLIST_FILE = "Git!/Git!-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)../Libs/objective-git/libgit2/include $(BUILT_PRODUCTS_DIR)/usr/local/include/** /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include/** $(SRCROOT)../Libs/objective-git/External/libgit2/include/** /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include/**";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
