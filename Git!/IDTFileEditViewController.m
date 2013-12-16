@@ -91,7 +91,7 @@
         UIPopoverController *popoverController = ((UIStoryboardPopoverSegue *)segue).popoverController;
         IDTBranchTableViewController *branchTableViewController = [segue destinationViewController];
         //FIXME: Use autolayout.
-        CGSize size = {400,400};
+        CGSize size = {200,200};
         popoverController.popoverContentSize = size;
         popoverController.delegate = self;
         IDTBranchManager *branchManager = [[IDTBranchManager alloc]initWithPopoverController:popoverController repo:self.gitFile.repo];
