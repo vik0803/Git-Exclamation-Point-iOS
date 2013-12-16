@@ -136,18 +136,21 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    if ([textField.text isEqualToString:@""]) {
+        return;
+    }
     NSURL *url = [[NSURL alloc]initWithString:textField.text];
-    if (url) {
-        NSURLComponents *components = [[NSURLComponents alloc]initWithURL:url resolvingAgainstBaseURL:NO];
-        NSRegularExpression *regex = [[NSRegularExpression alloc]initWithPattern:@"[^/]+(?=/$|$)" options:0 error:nil];
-        [regex enumerateMatchesInString:components.path options:0 range:NSMakeRange(0, components.path.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+    NSURLComponents *components = [[NSURLComponents alloc]initWithURL:url resolvingAgainstBaseURL:NO];
+    NSRegularExpression *regex = [[NSRegularExpression alloc]initWithPattern:@"[^/]+(?=/$|$)" options:0 error:nil];
+    [regex enumerateMatchesInString:components.path options:0 range:NSMakeRange(0, components.path.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+        if (result.range.length > 4) {
             NSRange removeExtraneousCharactersRanger = result.range;
             removeExtraneousCharactersRanger.length = removeExtraneousCharactersRanger.length - 4;
             self.repoNameTextField.text = [components.path substringWithRange:removeExtraneousCharactersRanger];
-        }];
-        self.cloneSwitch.on = YES;
-        [self cloneSwitchDidTurn];
-    }
+        }
+    }];
+    self.cloneSwitch.on = YES;
+    [self cloneSwitchDidTurn];
 }
 
 @end
