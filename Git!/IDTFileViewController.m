@@ -10,6 +10,12 @@
 #import "IDTGitObject.h"
 #import "IDTFileEditViewController.h"
 
+@interface IDTFileViewController ()
+// The gitFile passed into fileEditViewController. We check this variable every time a segue is requested by the user to make sure we're not making a duplicate segue.
+@property (nonatomic, strong) IDTGitFile *displayFile;
+
+@end
+
 @implementation IDTFileViewController 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -52,7 +58,14 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     IDTGitObject *gitObject = self.gitDirectory.gitObjects[indexPath.row];
-    cell.textLabel.text = gitObject.name;
+    if (!gitObject.isDirectory) {
+        IDTGitFile *gitFile =  (IDTGitFile *)gitObject;
+        NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:gitFile.name attributes:@{NSForegroundColorAttributeName:[gitFile colorFromStatus]}];
+        cell.textLabel.attributedText = attributedString;
+    } else {
+        cell.textLabel.text = gitObject.name;
+    }
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -61,7 +74,10 @@
     if (gitObject.directory) {
         [self performSegueWithIdentifier:@"goDeeper" sender:self];
     } else {
-        [self performSegueWithIdentifier:@"segueToEditFile" sender:self];
+        // Make sure we're segueing to a different file not the same.
+        if (![self.displayFile isEqual:self.gitDirectory.gitObjects[[self.tableView indexPathForSelectedRow].row]]) {
+            [self performSegueWithIdentifier:@"segueToEditFile" sender:self];
+        }
     }
 }
 
@@ -71,6 +87,7 @@
     if ([segue.identifier isEqual:@"segueToEditFile"]) {
         IDTFileEditViewController *fileEditVC = [segue destinationViewController];
         fileEditVC.gitFile = self.gitDirectory.gitObjects[[self.tableView indexPathForSelectedRow].row];
+        self.displayFile = self.gitDirectory.gitObjects[[self.tableView indexPathForSelectedRow].row];
     } else if ([segue.identifier isEqualToString:@"goDeeper"]) {
         IDTFileViewController *fileVC = [segue destinationViewController];
         fileVC.gitDirectory = self.gitDirectory.gitObjects[[self.tableView indexPathForSelectedRow].row];
