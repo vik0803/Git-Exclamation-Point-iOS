@@ -74,7 +74,12 @@
     NSString *intermediaryString = [self.document.fileURL.path stringByReplacingOccurrencesOfString:self.repo.fileURL.path withString:@""];
     //Cut the / at the beginning of the path.
     NSString *reletiveString = [intermediaryString substringFromIndex:1];
-    GTFileStatusFlags flags = [self.repo statusForFile:[NSURL URLWithString:reletiveString] success:&success error:&error];
+    NSURL *URL = [NSURL URLWithString:reletiveString];
+    GTFileStatusFlags flags = GTFileStatusCurrent;
+    if (URL) {
+        flags = [self.repo statusForFile:URL success:&success error:&error];
+    }
+    
     if (success) {
         return flags;
     } else {
