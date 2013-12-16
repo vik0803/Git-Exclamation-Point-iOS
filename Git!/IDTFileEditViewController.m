@@ -12,11 +12,11 @@
 #import "IDTChooseCollectionViewController.h"
 #import "IDTBranchTableViewController.h"
 #import "IDTBranchManager.h"
-@interface IDTFileEditViewController () <UITextViewDelegate,UIPopoverControllerDelegate>
+@interface IDTFileEditViewController () <UITextViewDelegate,UINavigationBarDelegate,UIPopoverControllerDelegate>
 
-@property (nonatomic,strong) IDTTextStorageDelegate *textStorageDelagate;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (nonatomic,strong) IDTTextStorageDelegate *textStorageDelegate;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *branchBarButtonItem;
 
@@ -29,11 +29,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.textStorageDelagate = [[IDTTextStorageDelegate alloc]init];
-    self.textView.textStorage.delegate = self.textStorageDelagate;
+    self.textStorageDelegate = [[IDTTextStorageDelegate alloc]init];
+    self.textView.textStorage.delegate = self.textStorageDelegate;
     self.textView.delegate = self;
-    
     [self openDocument];
+    
+    UINavigationItem *navigationItem = (UINavigationItem *)self.navigationBar.items[0];
+    navigationItem.title = self.gitFile.name;
 }
 
 - (void)didReceiveMemoryWarning
