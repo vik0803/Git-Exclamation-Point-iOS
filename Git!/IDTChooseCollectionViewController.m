@@ -24,6 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor purpleColor];
     self.collectionView.backgroundColor = [UIColor whiteColor];
 
 }

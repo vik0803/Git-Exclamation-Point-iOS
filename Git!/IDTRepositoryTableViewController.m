@@ -19,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor purpleColor];
     self.gitDirectories = [[NSMutableArray alloc]initWithCapacity:10];
     NSArray *array = [self arrayOfFoldersInFolder:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
     for (NSString *folder in array) {
