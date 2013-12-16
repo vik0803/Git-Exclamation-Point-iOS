@@ -41,7 +41,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"branchCell";
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     GTBranch *branch = self.branches[indexPath.row];
@@ -80,7 +80,7 @@
 }
 
 
--(void)createLocalBranchWithShortName:(NSString *)shortName {
+-(GTBranch *)createLocalBranchWithShortName:(NSString *)shortName {
     NSError *error = nil;
     NSString *branchName = [NSString stringWithFormat:@"%@%@",[GTBranch localNamePrefix],shortName];
     
@@ -96,8 +96,10 @@
         NSLog(@"error is %@",error);
     }
     if (branch) {
+        return branch;
         [self.popoverController dismissPopoverAnimated:YES];
     }
+    return nil;
     
 }
 

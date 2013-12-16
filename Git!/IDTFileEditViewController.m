@@ -20,11 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *branchBarButtonItem;
 
-@property (nonatomic, strong) IDTBranchTableViewController *branchTableViewController;
-
 @property (nonatomic, strong) UIPopoverController *branchPopoverController;
-
-@property (nonatomic, getter = isDisplyingPopover) BOOL displyingPopover;
 
 @end
 
@@ -96,6 +92,7 @@
         //FIXME: Use autolayout.
         CGSize size = {400,400};
         popoverController.popoverContentSize = size;
+        popoverController.delegate = self;
         IDTBranchManager *branchManager = [[IDTBranchManager alloc]initWithPopoverController:popoverController repo:self.gitFile.repo];
         branchTableViewController.branchManager = branchManager;
         branchTableViewController.tableView.dataSource = branchManager;
@@ -115,10 +112,9 @@
 
 -(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
     IDTBranchTableViewController *branchTableViewController = (IDTBranchTableViewController *)popoverController.contentViewController;
-    if (self.branchTableViewController.branch.shortName) {
+    if (branchTableViewController.branch) {
         self.branchBarButtonItem.title = branchTableViewController.branch.shortName;
     }
-    self.displyingPopover = NO;
 }
 
 

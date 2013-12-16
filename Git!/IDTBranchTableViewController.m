@@ -42,6 +42,7 @@
         }];
         if (success) {
             [self.branchManager.popoverController dismissPopoverAnimated:YES];
+            [self.branchManager.popoverController.delegate popoverControllerDidDismissPopover:self.branchManager.popoverController];
         } else {
             NSLog(@"Failure");
         }
@@ -54,7 +55,10 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-        [self.branchManager createLocalBranchWithShortName:[alertView textFieldAtIndex:0].text];
+         self.branch = [self.branchManager createLocalBranchWithShortName:[alertView textFieldAtIndex:0].text];
+
+    } else if (buttonIndex == 0) {
+        [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO];
     }
 }
 

@@ -13,7 +13,7 @@
 
 -(instancetype)initWithPopoverController:(UIPopoverController *)popoverController repo:(GTRepository *)repo;
 
--(void)createLocalBranchWithShortName:(NSString *)shortName;
+-(GTBranch *)createLocalBranchWithShortName:(NSString *)shortName;
 
 -(BOOL)checkoutBranch:(GTBranch *)branch error:(NSError *)error progressBlock:(void (^) (NSString *path, NSUInteger completedSteps, NSUInteger totalSteps))progressBlock;
 
