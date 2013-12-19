@@ -53,7 +53,8 @@
         NSError *error = nil;
         return [self.attributedText dataFromRange:NSMakeRange(0, self.attributedText.string.length) documentAttributes:@{NSDocumentTypeDocumentAttribute: NSRTFTextDocumentType} error:&error];
         if (error) {
-            NSLog(@"error is %@",error);
+            if (*outError != nil) *outError = error;
+            return nil;
         }
     } else {
         const char *UTF8String = [self.userText UTF8String];
