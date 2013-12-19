@@ -56,7 +56,9 @@
             NSLog(@"error is %@",error);
         }
     } else {
-        return [NSData dataWithBytes:[self.userText UTF8String]length:[self.userText length]];
+        const char *UTF8String = [self.userText UTF8String];
+        NSData *data = [NSData dataWithBytes:UTF8String length:strlen(UTF8String)];
+        return data;
     }
 }
 
