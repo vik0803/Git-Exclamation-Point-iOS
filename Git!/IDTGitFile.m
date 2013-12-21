@@ -31,8 +31,8 @@
     }
     NSString *intermediaryString = [fileURL.path stringByReplacingOccurrencesOfString:repo.fileURL.path withString:@""];
     //Cut the / at the beginning of the path.
-    NSString *reletiveString = [intermediaryString substringFromIndex:1];
-    [index addFile:reletiveString error:&error];
+    NSString *relativeString = [intermediaryString substringFromIndex:1];
+    [index addFile:relativeString error:&error];
     if (error) {
         [error showErrorInAlertView];
     }
@@ -73,8 +73,8 @@
     BOOL success = 0;
     NSString *intermediaryString = [self.document.fileURL.path stringByReplacingOccurrencesOfString:self.repo.fileURL.path withString:@""];
     //Cut the / at the beginning of the path.
-    NSString *reletiveString = [intermediaryString substringFromIndex:1];
-    NSURL *URL = [NSURL URLWithString:reletiveString];
+    NSString *relativeString = [intermediaryString substringFromIndex:1];
+    NSURL *URL = [NSURL URLWithString:relativeString];
     GTFileStatusFlags flags = GTFileStatusCurrent;
     if (URL) {
         flags = [self.repo statusForFile:URL success:&success error:&error];
