@@ -29,9 +29,9 @@
 
 // Called whenever the application reads data from the file system
 - (BOOL)loadFromContents:(id)contents ofType:(NSString *)typeName error:(NSError **)outError {
-    if ([contents respondsToSelector:@selector(length)]) {
+    if ([contents isKindOfClass:[NSData class]]) {
         if ([contents length] > 0)
-            self.userText = [[NSString alloc]initWithBytes:[contents bytes] length:[contents length] encoding:NSUTF8StringEncoding];
+            self.userText = [[NSString alloc]initWithData:(NSData *)contents encoding:NSUTF8StringEncoding];
         else {
             self.userText = @"";
         }
