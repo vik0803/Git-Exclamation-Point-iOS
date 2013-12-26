@@ -52,7 +52,7 @@
             cell.textLabel.attributedText = attributedString;
         }
     } else {
-        cell.textLabel.attributedText = [[NSAttributedString alloc]initWithString:(NSString *)branch attributes:@{NSForegroundColorAttributeName: [UIColor greenColor]}];
+        cell.textLabel.attributedText = [[NSAttributedString alloc]initWithString:(NSString *)branch attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.41f green:0.91f blue:0.32f alpha:1.00f]}];
     }
     
     return cell;
