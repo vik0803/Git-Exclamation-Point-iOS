@@ -72,13 +72,15 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         IDTGitDirectory *gitDirectory = self.gitDirectories[indexPath.row];
-        [self.gitDirectories removeObject:gitDirectory];
-        NSError *error = nil;
-        [gitDirectory delete:&error];
-        if (error) {
-            [error showErrorInAlertView];
-        } else {
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        if ([self.gitDirectories containsObject:gitDirectory]) {
+            [self.gitDirectories removeObject:gitDirectory];
+            NSError *error = nil;
+            [gitDirectory delete:&error];
+            if (error) {
+                [error showErrorInAlertView];
+            } else {
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            }
         }
     }
 }
