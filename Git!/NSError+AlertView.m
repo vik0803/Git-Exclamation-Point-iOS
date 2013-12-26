@@ -15,7 +15,7 @@
         return;
     }
     NSLog(@"error is %@",self);
-    UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"Error" message:[self description] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"Error" message:[self description] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     [alerView show];
 }
 
