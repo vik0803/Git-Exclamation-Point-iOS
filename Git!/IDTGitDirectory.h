@@ -10,7 +10,7 @@
 #import "ObjectiveGit.h"
 #import "IDTGitObject.h"
 #import <IDTGitFile.h>
-//A 'gitDirectory' is an object that is a folder. It means that the folder is tracked under 
+//A 'gitDirectory' is an object that is a folder. It means that the folder is tracked under Git.
 @interface IDTGitDirectory : IDTGitObject
 
 @property (nonatomic,strong) NSMutableArray *gitObjects;

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ObjectiveGit.h"
 #import "IDTDocument.h"
-//This is a semi-abstract superclass. It's semi because you will actually use this object in client use but you will never cast to it.
+//This is a abstract superclass for file system objects that are in managed by Git.
 @interface IDTGitObject : NSObject
 
 @property (nonatomic,strong) NSString *name;
