@@ -15,9 +15,9 @@
 @property (nonatomic,strong) IDTGitFile *gitFile;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *commitFile;
 
-//This is called by the appDelagte.
+//This is called by the appDelegate.
 -(void)closeDocument;
-//This is called by the appDelagte.
+//This is called by the appDelegate.
 -(void)openDocument;
 
 @end
