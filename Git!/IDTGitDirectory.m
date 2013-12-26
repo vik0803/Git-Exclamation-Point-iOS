@@ -42,13 +42,13 @@
 
     return self;
 }
--(instancetype)initWithSumbmodule:(GTSubmodule *)submodule {
+-(instancetype)initWithSubmodule:(GTSubmodule *)submodule {
     self = [super init];
     if (self == nil) return nil;
 
     return self;
 }
-//an internal initlizer that may be opend up...
+//an internal initializer that may be exposed.
 -(instancetype)initWithGitDirectoryURL:(NSURL *)directoryURL repo:(GTRepository *)repo {
     self = [super initWithObjectURL:directoryURL];
     if (self) {
@@ -83,14 +83,14 @@
 
 -(BOOL)delete:(NSError **)error {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL sucess = [fileManager removeItemAtURL:self.directoryURL error:error];
+    BOOL success = [fileManager removeItemAtURL:self.directoryURL error:error];
     
     if (error) {
         NSLog(@"error is %@",*error);
-        sucess = NO;
+        success = NO;
     }
     
-    return sucess;
+    return success;
 }
 
 
