@@ -92,8 +92,8 @@ NSString *const IDTDefaultTokenName = @"IDTDefaultTokenName";
 
 }
 -(NSArray *)highlightFunctionSyntax:(NSString *)backingStore {
-    NSMutableArray *keyWords = [[NSMutableArray alloc]initWithCapacity:20];
-   NSString *regexString = self.objectiveCLangDict[@"functionDefinition"];
+    NSMutableArray *keyWords = [NSMutableArray array];
+    NSString *regexString = self.objectiveCLangDict[@"functionDefinition"];
     NSRegularExpression *regex = [[NSRegularExpression alloc]initWithPattern:regexString options:NSRegularExpressionAnchorsMatchLines error:nil];
     [regex enumerateMatchesInString:backingStore options:0 range:NSMakeRange(0, [self.backingStore.string length]) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
         IDTComponentToHighlight *componentToHighlight = [[IDTComponentToHighlight alloc]initWithRange:result.range attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:.1 green:.5 blue:.2 alpha:1]}];
