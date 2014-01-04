@@ -15,11 +15,11 @@
 
 @property (nonatomic,strong) NSMutableArray *gitObjects;
 
--(instancetype)initWithGitDirectoryURL:(NSURL *)directoryURL;
+- (instancetype)initWithGitDirectoryURL:(NSURL *)directoryURL;
 
--(instancetype)initWithRepo:(GTRepository *)repo;
+- (instancetype)initWithRepo:(GTRepository *)repo;
 
--(BOOL)delete:(NSError **)error;
+- (BOOL)delete:(NSError **)error;
 
 +(IDTGitDirectory *)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout transferProgressBlock:(void (^)(const git_transfer_progress *transfer_progress))transferProgressBlock checkoutProgressBlock:(void (^)(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps))checkoutProgressBlock error:(NSError **)error;
 
