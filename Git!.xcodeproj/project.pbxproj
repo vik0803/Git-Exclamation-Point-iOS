@@ -262,8 +262,6 @@
 				20DCBF491832ED800047D9EA /* Branch Management */,
 				200CAB5017C823A100DB04CC /* IDTSplitViewController.h */,
 				200CAB5117C823A100DB04CC /* IDTSplitViewController.m */,
-				209E8DB51799111700A8C77A /* IDTCreateRepoViewController.h */,
-				209E8DB61799111700A8C77A /* IDTCreateRepoViewController.m */,
 				2091BCF717813DD100858B97 /* IDTFileEditViewController.h */,
 				2091BCF817813DD100858B97 /* IDTFileEditViewController.m */,
 				2095CFAD177F4E9E00D34A8A /* Main.storyboard */,
@@ -312,6 +310,8 @@
 			children = (
 				209570141798E98700FDF3AD /* IDTRepositoryTableViewController.h */,
 				209570151798E98700FDF3AD /* IDTRepositoryTableViewController.m */,
+				209E8DB51799111700A8C77A /* IDTCreateRepoViewController.h */,
+				209E8DB61799111700A8C77A /* IDTCreateRepoViewController.m */,
 				2091BCFA17813E0100858B97 /* IDTFileViewController.h */,
 				2091BCFB17813E0100858B97 /* IDTFileViewController.m */,
 			);
