@@ -9,15 +9,14 @@
 #import "IDTRepositoryTableViewController.h"
 #import "IDTGitDirectory.h"
 #import "ObjectiveGit.h"
-#import <IDTFileViewController.h>
+#import "IDTFileViewController.h"
 #import "NSError+AlertView.h"
 @interface IDTRepositoryTableViewController ()
 @end
 
 @implementation IDTRepositoryTableViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.tintColor = [UIColor purpleColor];
     self.gitDirectories = [[NSMutableArray alloc]initWithCapacity:10];
@@ -32,8 +31,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewRepo:)];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
