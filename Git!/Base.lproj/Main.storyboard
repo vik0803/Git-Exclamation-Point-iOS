@@ -82,12 +82,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Cancel" id="z8v-FG-fiH">
+                                        <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="cancel:" destination="9xN-a6-Luv" id="zIx-o1-YzF"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="539" style="plain" systemItem="fixedSpace" id="afY-dJ-JWH"/>
                                     <barButtonItem title="Create Repo" id="B3T-Jc-pdO">
+                                        <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="createRepo:" destination="9xN-a6-Luv" id="R2S-0k-x6R"/>
                                         </connections>
@@ -277,11 +279,13 @@
                                 <items>
                                     <navigationItem title="Title" id="Llw-ds-kBn">
                                         <barButtonItem key="leftBarButtonItem" title="Commit" id="zO6-at-Ze4">
+                                            <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="r0G-iB-eXJ" kind="modal" identifier="segueToCommitWorkflow" id="Ylv-yk-1yk"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Branch" id="dnh-N4-Hpp">
+                                            <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="5ZZ-hM-RkP" kind="popover" identifier="segueToPopover" popoverAnchorBarButtonItem="dnh-N4-Hpp" id="cqI-bE-zeB">
                                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
