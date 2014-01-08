@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpb-4e-WNx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tpb-4e-WNx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -62,7 +62,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nu5-5y-N1o">
-                                <rect key="frame" x="566" y="318" width="74" height="21"/>
+                                <rect key="frame" x="537" y="318" width="74" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -96,13 +96,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Console" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLt-ev-VXa">
-                                <rect key="frame" x="320" y="640" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -113,7 +106,7 @@
                             <constraint firstItem="FIW-qg-iyj" firstAttribute="top" secondItem="drS-tx-FAd" secondAttribute="top" constant="218" id="6AI-3j-mCQ"/>
                             <constraint firstItem="Nu5-5y-N1o" firstAttribute="top" secondItem="WgZ-DM-7RW" secondAttribute="bottom" constant="8" symbolic="YES" id="6E8-WN-jG6"/>
                             <constraint firstItem="VvC-Q8-Hnb" firstAttribute="trailing" secondItem="r3r-5v-99s" secondAttribute="trailing" id="9w5-gj-Mhh"/>
-                            <constraint firstItem="FIW-qg-iyj" firstAttribute="leading" secondItem="Nu5-5y-N1o" secondAttribute="leading" id="FbB-hB-PUH"/>
+                            <constraint firstItem="FIW-qg-iyj" firstAttribute="leading" secondItem="Nu5-5y-N1o" secondAttribute="leading" constant="29" id="FbB-hB-PUH"/>
                             <constraint firstItem="WgZ-DM-7RW" firstAttribute="top" secondItem="FIW-qg-iyj" secondAttribute="bottom" constant="40" id="HxC-KH-Uxa"/>
                             <constraint firstItem="VvC-Q8-Hnb" firstAttribute="leading" secondItem="r3r-5v-99s" secondAttribute="leading" id="SJj-Ys-qAX"/>
                             <constraint firstItem="eCj-0h-JIE" firstAttribute="centerX" secondItem="kE4-fA-NOX" secondAttribute="centerX" constant="-0.5" id="TOa-Rn-i0I"/>
@@ -130,7 +123,7 @@
                             <constraint firstAttribute="trailing" secondItem="tdg-WY-noc" secondAttribute="trailing" id="v9D-VF-zbu"/>
                             <constraint firstItem="FIW-qg-iyj" firstAttribute="top" secondItem="vaO-Eg-7gq" secondAttribute="bottom" constant="15" id="xUC-nm-po7"/>
                             <constraint firstItem="r3r-5v-99s" firstAttribute="leading" secondItem="drS-tx-FAd" secondAttribute="leading" constant="174" id="xk7-O5-n7d"/>
-                            <constraint firstItem="WgZ-DM-7RW" firstAttribute="centerX" secondItem="Nu5-5y-N1o" secondAttribute="centerX" constant="-14.5" id="z9s-ZJ-Yad"/>
+                            <constraint firstItem="WgZ-DM-7RW" firstAttribute="centerX" secondItem="Nu5-5y-N1o" secondAttribute="centerX" constant="14.5" id="z9s-ZJ-Yad"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -142,7 +135,6 @@
                         <outlet property="cloneSwitch" destination="vaO-Eg-7gq" id="LVM-gU-xCB"/>
                         <outlet property="cloneURLTextField" destination="VvC-Q8-Hnb" id="YtV-cN-V1m"/>
                         <outlet property="cloneWithCheckoutSwitch" destination="WgZ-DM-7RW" id="9hC-Sl-vQa"/>
-                        <outlet property="consoleLable" destination="kLt-ev-VXa" id="nQh-Nd-C0u"/>
                         <outlet property="repoNameTextField" destination="r3r-5v-99s" id="Vzf-WD-A9q"/>
                     </connections>
                 </viewController>
@@ -682,6 +674,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="v2f-db-Vc2"/>
-        <segue reference="DH1-48-DOw"/>
+        <segue reference="Sef-nA-qxx"/>
     </inferredMetricsTieBreakers>
 </document>
