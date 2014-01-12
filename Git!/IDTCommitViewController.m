@@ -139,6 +139,4 @@ int callback(const char *path, const char *matched_pathspec, void *payload) {
     [builder removeEntryWithFileName:statusDelta.newFile.path error:error];
 }
 
-
-
 @end
