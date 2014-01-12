@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cloneURLTextField;
 // Only shown if cloneSwitch is set to `YES`. Then is set to `YES`
 @property (weak, nonatomic) IBOutlet UISwitch *cloneWithCheckoutSwitch;
-// A simple label. We have this as a property because we sometomes need to hide it.
+// A simple label. We have this as a property because we sometimes need to hide it.
 @property (weak, nonatomic) IBOutlet UILabel *checkoutLabel;
 // As above.
 @property (weak, nonatomic) IBOutlet UILabel *barelyLabel;
