@@ -9,9 +9,9 @@
 #import "IDTCommitViewController.h"
 #import "IDTStatusViewController.h"
 #import "IDTDocument.h"
-#import "pathspec.h"
-@interface IDTCommitViewController () <UIAlertViewDelegate>
+#import "git2/pathspec.h"
 
+@interface IDTCommitViewController () <UIAlertViewDelegate>
 @end
 
 @implementation IDTCommitViewController

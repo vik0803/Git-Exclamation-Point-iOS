@@ -8,8 +8,8 @@
 #import "IDTDiffViewController.h"
 #import "IDTDocument.h"
 #import "IDTTextStorageDelegate.h"
-#import "push.h"
-#import "remote.h"
+#import "git2/push.h"
+#import "git2/remote.h"
 
 @interface IDTDiffViewController ()
 /// The individual file delta.
