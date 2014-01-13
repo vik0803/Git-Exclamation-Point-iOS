@@ -7,9 +7,13 @@
 //
 
 #import "IDTGitDirectory.h"
+
+NSString * const IDTDownloadStatusDidChange = @"IDTDownloadStatusDidChange";
+
 @interface IDTGitDirectory ()
 @property (nonatomic,strong) NSURL *directoryURL;
 @end
+
 @implementation IDTGitDirectory
 -(instancetype)initWithGitDirectoryURL:(NSURL *)specificDirectoryURL {
     self = [super initWithObjectURL:specificDirectoryURL];
@@ -67,7 +71,6 @@
     NSError *error = nil;
     NSArray *array = [fileManager contentsOfDirectoryAtURL:dirURL includingPropertiesForKeys:nil options:0 error:&error];
     if (error) NSLog(@"error is %@",error);
-    
     NSMutableArray *objects = [[NSMutableArray alloc]initWithCapacity:array.count];
     for (NSURL *objectURL in array) {
         if (![self isDirectoryURL:objectURL]) {
@@ -93,37 +96,45 @@
     return success;
 }
 
-
-+(IDTGitDirectory *)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout transferProgressBlock:(void (^)(const git_transfer_progress *transfer_progress))transferProgressBlock checkoutProgressBlock:(void (^)(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps))checkoutProgressBlock error:(NSError **)error {
-    IDTGitDirectory *gitDirectory = nil;
-    NSError *gitSpecificError = nil;
-    NSString *nameString = [NSString stringWithFormat:@"Documents/%@",name];
-    NSURL *directoryURL = [NSURL fileURLWithPath:[NSHomeDirectory() stringByAppendingPathComponent:nameString]];
-    NSDictionary *options = @{GTRepositoryCloneOptionsTransportFlags:@(1), GTRepositoryCloneOptionsCheckout :@(checkout), GTRepositoryCloneOptionsBare:@(bare) };
-   
-    GTRepository *repo = [GTRepository cloneFromURL:url toWorkingDirectory:directoryURL options:options error:error transferProgressBlock:transferProgressBlock checkoutProgressBlock:checkoutProgressBlock];
-    
-    if (gitSpecificError) {
-        if (error !=NULL) *error = gitSpecificError;
-        return nil;
-    } else {
-        gitDirectory = [[IDTGitDirectory alloc]initWithRepo:repo];
-        //FIXME: Provide option to turn this method off
-//        if (![gitDirectory initializeSubmodulesError:error]) {
-//            NSLog(@"init of submodules failed! %@",*error);
-//        }
-        return gitDirectory;
-    }
-    
++ (void)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout error:(NSError **)error completion:(void (^)(IDTGitDirectory *gitDirectory, BOOL success, NSError *error))completionBlock {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        __block IDTGitDirectory *gitDirectory = nil;
+        NSError *gitSpecificError = nil;
+        NSString *nameString = [NSString stringWithFormat:@"Documents/%@",name];
+        NSURL *directoryURL = [NSURL fileURLWithPath:[NSHomeDirectory() stringByAppendingPathComponent:nameString]];
+        NSDictionary *options = @{GTRepositoryCloneOptionsTransportFlags:@(1), GTRepositoryCloneOptionsCheckout :@(checkout), GTRepositoryCloneOptionsBare:@(bare) };
+        GTRepository *repo = [GTRepository cloneFromURL:url toWorkingDirectory:directoryURL options:options error:&gitSpecificError transferProgressBlock:^void(const git_transfer_progress *transfer_progress) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                NSString *status = [NSString stringWithFormat:@"Received %d objects and indexed %d out of  a total of %d",transfer_progress->received_objects,transfer_progress->indexed_objects,transfer_progress->total_objects];
+                [[NSNotificationCenter defaultCenter]postNotificationName:IDTDownloadStatusDidChange object:status];
+            });
+        } checkoutProgressBlock:^void(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                NSString *status = [NSString stringWithFormat:@"Checking out Path %@. \n Completed %lu out of %lu",path,(unsigned long)completedSteps,(unsigned long)totalSteps];
+                [[NSNotificationCenter defaultCenter]postNotificationName:IDTDownloadStatusDidChange object:status];
+            });
+        }];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            gitDirectory = [[IDTGitDirectory alloc]initWithRepo:repo];
+            if (*error != NULL) *error = gitSpecificError;
+            completionBlock(gitDirectory,(gitDirectory != nil ? YES : NO),*error);
+        });
+    });
 }
 
-
--(BOOL)initializeSubmodulesError:(NSError **)error {
-    [self.repo enumerateSubmodulesRecursively:YES usingBlock:^(GTSubmodule *submodule, BOOL *stop) {
-        NSError *second = nil;
-        [submodule writeToParentConfigurationDestructively:YES error:&second];
-        if (!second) {
-                   } else {
+- (BOOL)initializeSubmodulesError:(NSError **)error {
+    [self.repo enumerateSubmodulesRecursively:NO usingBlock:^(GTSubmodule *submodule, BOOL *stop) {
+        NSError *submoduleError = nil;
+        [submodule writeToParentConfigurationDestructively:YES error:&submoduleError];
+        if (!submoduleError) {
+            [IDTGitDirectory cloneWithName:submodule.URLString.lastPathComponent URL:[NSURL URLWithString:submodule.URLString] barely:NO checkout:YES error:NULL completion:^(IDTGitDirectory *gitDirectory, BOOL success, NSError *error) {
+                
+            }];
+            if (*error) {
+                NSLog(@"error is %@",*error);
+            }
+        } else {
             
         }
     }];

@@ -10,6 +10,11 @@
 #import <ObjectiveGit.h>
 #import "IDTGitDirectory.h"
 #import "IDTRepositoryTableViewController.h"
+#import "NSError+AlertView.h"
+
+NSString * const IDTCloneFinished = @"IDTCloneFinished";
+NSString * const IDTCloneStarted = @"IDTCloneStarted";
+
 @interface IDTCreateRepoViewController () <UITextFieldDelegate>
 // Weather or not the repo we are creating is going to be cloned. Set to `YES` if the cloneURLTextField is filled.
 @property (weak, nonatomic) IBOutlet UISwitch *cloneSwitch;
@@ -25,10 +30,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *barelyLabel;
 // Weather or not the cloned repo will be bare. Set to `NO`
 @property (weak, nonatomic) IBOutlet UISwitch *cloneBarelySwitch;
-// A textView used during a clone.
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-// We need this property so we can dynaimcly show/hide it.
-@property (weak, nonatomic) IBOutlet UILabel *consoleLable;
 @end
 
 @implementation IDTCreateRepoViewController
@@ -55,8 +56,6 @@
     self.repoNameTextField.placeholder = @"Type in the name of the Repo";
     self.cloneURLTextField.placeholder = @"Type in the URL of the git repository to clone.";
     self.cloneURLTextField.delegate = self;
-    self.textView.editable = NO;
-    self.consoleLable.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,58 +64,16 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)createRepo:(id)sender {
-    IDTGitDirectory *gitRepository = nil;
     [self.view endEditing:YES];
     if (self.cloneSwitch.on) {
-        NSError *error = nil;
-        gitRepository = [IDTGitDirectory cloneWithName:self.repoNameTextField.text URL:[NSURL URLWithString:self.cloneURLTextField.text] barely:self.cloneBarelySwitch.on checkout:self.cloneWithCheckoutSwitch.on transferProgressBlock:^(const git_transfer_progress *transfer_progress) {
-            self.consoleLable.hidden = NO;
-            NSString *string = [NSString stringWithFormat:@"Received %d objects and indexed %d out of  a total of %d \n",transfer_progress->received_objects,transfer_progress->indexed_objects,transfer_progress->total_objects];
-            self.textView.text = [self.textView.text stringByAppendingString:string];
-        } checkoutProgressBlock:^(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps) {
-            self.consoleLable.hidden = NO;
-            NSString *string = [NSString stringWithFormat:@"Checking out Path %@. \n Completed %lu out of %lu \n",path,(unsigned long)completedSteps,(unsigned long)totalSteps];
-            self.textView.text = [self.textView.text stringByAppendingString:string];
-        } error:&error];
-        
-        if (error) {
-            NSLog(@"error is %@",error);
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Failure" message:error.description delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-            [alertView show];
-            return;
-        }
+        [self cloneRepo];
     } else {
-        NSError *error = nil;
-        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",self.repoNameTextField.text]];
-        [[NSFileManager defaultManager]createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:&error];
-        if (error) {
-            NSLog(@"error is %@",error);
-            error = nil;
-        }
-        GTRepository *repo = [GTRepository initializeEmptyRepositoryAtFileURL:[NSURL fileURLWithPath:path] error:&error];
-        if (repo) {
-            gitRepository = [[IDTGitDirectory alloc]initWithRepo:repo];
-        } else {
-            NSLog(@"error is %@",error);
-        }
+        [self createLocalRepo];
     }
-    
-    UISplitViewController *splitView = (UISplitViewController *)self.presentingViewController;
-    IDTRepositoryTableViewController *repoTableViewController = nil;
-    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
-        UINavigationController *navigationController = splitView.viewControllers[0];
-        repoTableViewController = (IDTRepositoryTableViewController *)navigationController.topViewController;
-    } else {
-        repoTableViewController = splitView.viewControllers[0];
-    }
-    [self dismissViewControllerAnimated:YES completion:^{
-        [repoTableViewController.gitDirectories addObject:gitRepository];
-        [repoTableViewController.tableView reloadData];
-    }];
-
 }
+
 - (IBAction)cancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)cloneSwitchDidTurn {
@@ -151,6 +108,50 @@
     }];
     self.cloneSwitch.on = YES;
     [self cloneSwitchDidTurn];
+}
+
+- (void)createLocalRepo {
+    IDTGitDirectory *gitDirectory;
+    NSError *error = nil;
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",self.repoNameTextField.text]];
+    [[NSFileManager defaultManager]createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:&error];
+    if (error) {
+        NSLog(@"error is %@",error);
+        error = nil;
+    }
+    GTRepository *repo = [GTRepository initializeEmptyRepositoryAtFileURL:[NSURL fileURLWithPath:path] error:&error];
+    if (repo) {
+        gitDirectory = [[IDTGitDirectory alloc]initWithRepo:repo];
+    } else {
+        NSLog(@"error is %@",error);
+    }
+    
+    UISplitViewController *splitView = (UISplitViewController *)self.presentingViewController;
+    IDTRepositoryTableViewController *repoTableViewController = nil;
+    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
+        UINavigationController *navigationController = splitView.viewControllers[0];
+        repoTableViewController = (IDTRepositoryTableViewController *)navigationController.topViewController;
+    } else {
+        repoTableViewController = splitView.viewControllers[0];
+    }
+    [self dismissViewControllerAnimated:YES completion:^{
+        [repoTableViewController.gitDirectories addObject:gitDirectory];
+        [repoTableViewController.tableView reloadData];
+    }];
+}
+
+- (void)cloneRepo {
+    NSError *error = nil;
+    [[NSNotificationCenter defaultCenter]postNotificationName:IDTCloneStarted object:@"Clone Started"];
+    [IDTGitDirectory cloneWithName:self.repoNameTextField.text URL:[NSURL URLWithString:self.cloneURLTextField.text] barely:self.cloneBarelySwitch.on checkout:self.cloneWithCheckoutSwitch.on error:&error completion:^(IDTGitDirectory *gitDirectory, BOOL success, NSError *error) {
+        if (success) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:IDTCloneFinished object:gitDirectory];
+        } else {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"IDTCloneCancelled" object:nil];
+            [error showErrorInAlertView];
+        }
+    }];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

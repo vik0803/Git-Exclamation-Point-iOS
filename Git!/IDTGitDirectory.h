@@ -10,6 +10,8 @@
 #import "ObjectiveGit.h"
 #import "IDTGitObject.h"
 #import <IDTGitFile.h>
+
+extern NSString * const IDTDownloadStatusDidChange;
 //A 'gitDirectory' is an object that is a folder. It means that the folder is tracked under Git.
 @interface IDTGitDirectory : IDTGitObject
 
@@ -21,6 +23,6 @@
 
 - (BOOL)delete:(NSError **)error;
 
-+(IDTGitDirectory *)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout transferProgressBlock:(void (^)(const git_transfer_progress *transfer_progress))transferProgressBlock checkoutProgressBlock:(void (^)(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps))checkoutProgressBlock error:(NSError **)error;
++ (void)cloneWithName:(NSString *)name URL:(NSURL *)url barely:(BOOL)bare checkout:(BOOL)checkout error:(NSError **)error completion:(void (^)(IDTGitDirectory *gitDirectory, BOOL success, NSError *error))completionBlock;
 
 @end

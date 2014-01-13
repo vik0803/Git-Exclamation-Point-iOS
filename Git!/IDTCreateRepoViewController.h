@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+extern NSString * const IDTCloneFinished;
+extern NSString * const IDTCloneStarted;
 
 @interface IDTCreateRepoViewController : UIViewController
 

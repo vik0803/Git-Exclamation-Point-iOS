@@ -29,10 +29,19 @@
         }
     }
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewRepo:)];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cloneDataChanged:) name:IDTDownloadStatusDidChange object:NULL];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cloneFinished:) name:@"IDTCloneFinished" object:NULL];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cloneStarted:) name:@"IDTCloneStarted" object:NULL];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cloneCancelled:) name:@"IDTCloneCancelled" object:NULL];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 #pragma mark - Table view data source
@@ -43,13 +52,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"cellReuseRepo";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    IDTGitDirectory *gitDirectory = self.gitDirectories[indexPath.row];
-    cell.textLabel.text = gitDirectory.name;
-    
+    if ([self.gitDirectories[indexPath.row] isKindOfClass:[IDTGitDirectory class]]) {
+        IDTGitDirectory *gitDirectory = self.gitDirectories[indexPath.row];
+        cell.textLabel.text = gitDirectory.name;
+    } else {
+        NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:self.gitDirectories[indexPath.row] attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Helvetica" size:10.5]}];
+        cell.textLabel.attributedText = attributedString;
+    }
     return cell;
 }
+
 -(NSArray *)arrayOfFoldersInFolder:(NSString *)folder {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSArray* files = [fileManager contentsOfDirectoryAtPath:folder error:nil];
@@ -83,7 +96,7 @@
     }
 }
 
-#pragma mark - Navigation
+#pragma mark - Navigation & Segue
 
 -(void)createNewRepo:(id)sender {
     [self performSegueWithIdentifier:@"segueToCreateRepo" sender:self];
@@ -94,11 +107,47 @@
         IDTFileViewController *fileVC = [segue destinationViewController];
         IDTGitDirectory *gitDirectory = self.gitDirectories[[self.tableView indexPathForSelectedRow].row];
         fileVC.gitDirectory = gitDirectory;
-        
-    } else if ([segue.identifier isEqualToString:@"segueToCreateRepo"]) {
-        
+    }
+}
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([self.gitDirectories[[self.tableView indexPathForSelectedRow].row] isKindOfClass:[NSString class]]) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+#pragma Clone
+
+- (void)cloneDataChanged:(NSNotification *)note {
+    if ([[self.gitDirectories lastObject] isKindOfClass:[NSString class]]) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.gitDirectories.count -1 inSection:0];
+        if ([self.tableView.indexPathsForVisibleRows containsObject:indexPath]) {
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            NSAttributedString *attributedString = [[NSAttributedString alloc]initWithString:note.object attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Helvetica" size:10.5]}];
+            cell.textLabel.attributedText = attributedString;
+        }
+    }
+}
+
+- (void)cloneCancelled:(NSNotification *)note {
+    [self.gitDirectories removeLastObject];
+    [self.tableView reloadData];
+}
+
+- (void)cloneStarted:(NSNotification *)note {
+    if ([[self.gitDirectories lastObject] isKindOfClass:[NSString class]]) {
+        [self.gitDirectories removeLastObject];
     }
     
+    [self.gitDirectories addObject:note.object];
+    [self.tableView reloadData];
+}
+
+- (void)cloneFinished:(NSNotification *)note {
+    [self.gitDirectories removeLastObject];
+    [self.gitDirectories addObject:note.object];
+    [self.tableView reloadData];
 }
 
 @end
