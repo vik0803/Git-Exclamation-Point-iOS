@@ -136,7 +136,7 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if ([textField.text isEqualToString:@""]) {
+    if ([textField.text isEqualToString:@""] || [textField.text rangeOfCharacterFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].location != NSNotFound) {
         return;
     }
     NSURL *url = [[NSURL alloc]initWithString:textField.text];
