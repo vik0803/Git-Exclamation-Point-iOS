@@ -32,7 +32,7 @@
 - (IBAction)commit:(UIBarButtonItem *)sender {
     __block NSError *error = nil;
     
-    GTCommit *commit = [self.repo lookupObjectByRefspec:@"HEAD" error:nil];
+    GTCommit *commit = [self.repo lookupObjectByRevParse:@"HEAD" error:&error];
     GTTree *tree = commit.tree;
     GTTreeBuilder *builder = [[GTTreeBuilder alloc]initWithTree:tree error:&error];
     if (error) NSLog(@"error is %@",error); error = nil;
@@ -56,7 +56,7 @@
 }
 -(void)finishCommit:(GTTree *)tree {
     NSError *error = nil;
-    GTCommit *commit = [self.repo lookupObjectByRefspec:@"HEAD" error:nil];
+    GTCommit *commit = [self.repo lookupObjectByRevParse:@"HEAD" error:nil];
     GTSignature *signature = [[GTSignature alloc]initWithName:self.nameTextField.text email:self.emailTextField.text time:[NSDate date]];
     [self updateIndex];
     NSArray *parents = nil;
