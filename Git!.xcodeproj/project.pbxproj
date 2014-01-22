@@ -692,7 +692,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)../Libs/objective-git/libgit2/include $(BUILT_PRODUCTS_DIR)/usr/local/include";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include $(SRCROOT)../Libs/objective-git/External/libgit2/include";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include $(SRCROOT)../Libs/objective-git/External/libgit2/include /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
