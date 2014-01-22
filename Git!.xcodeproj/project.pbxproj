@@ -208,8 +208,6 @@
 		209144FE180BB8BE003D5012 /* Commit Workflow */ = {
 			isa = PBXGroup;
 			children = (
-				20C473F61847A2910051AB52 /* IDTCommit.h */,
-				20C473F71847A2910051AB52 /* IDTCommit.m */,
 				201EA588180BB27A0046D41B /* IDTCommitViewController.h */,
 				201EA589180BB27A0046D41B /* IDTCommitViewController.m */,
 				209144F4180BB8B3003D5012 /* IDTStatusViewController.h */,
@@ -502,7 +500,6 @@
 				2060499117950859005C65AC /* IDTGitDirectory.m in Sources */,
 				204754211829E0C6005372F7 /* IDTBranchTableViewController.m in Sources */,
 				20C347AD17B07BBD00A9EED5 /* IDTComponentToHighlight.m in Sources */,
-				20C473F81847A2920051AB52 /* IDTCommit.m in Sources */,
 				200CAB5217C823A100DB04CC /* IDTSplitViewController.m in Sources */,
 				20E1324D1783C46900B547D3 /* IDTDiffViewController.m in Sources */,
 				209570161798E98700FDF3AD /* IDTRepositoryTableViewController.m in Sources */,
