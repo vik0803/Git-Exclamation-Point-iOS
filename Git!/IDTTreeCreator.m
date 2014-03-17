@@ -99,7 +99,7 @@
         }
     }
     
-    if (internalError == nil) {
+    if (internalError != nil) {
         if(success != nil) *success = NO;
         if (error) *error = internalError;
     } else {

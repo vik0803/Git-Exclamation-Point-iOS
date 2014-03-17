@@ -43,7 +43,7 @@
     
     GTCommit *commit = [self.repo createCommitWithTree:tree message:self.commitMessageTextView.text author:signature committer:signature parents:parents updatingReferenceNamed:branch.reference.name error:&error];
 
-    if (commit != nil || error != nil) {
+    if (commit == nil || error != nil) {
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:[error description]  delegate:self cancelButtonTitle:@"Apology Accepted" otherButtonTitles:nil];
         [alertView show];
         return;
