@@ -48,12 +48,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		208161E318344F9B00854001 /* PBXContainerItemProxy */ = {
+		2021EA3418D6640800238D1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F6CBB45317FFD50500404926;
-			remoteInfo = "ObjectiveGit-iOS-arm64";
+			remoteGlobalIDString = 04DB4644133AB57600D9C624;
+			remoteInfo = "ObjectiveGit-iOS";
 		};
 		2095CFBE177F4E9E00D34A8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -367,7 +367,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				208161E418344F9B00854001 /* PBXTargetDependency */,
+				2021EA3518D6640800238D1E /* PBXTargetDependency */,
 			);
 			name = "Git!";
 			productName = "Git!";
@@ -530,10 +530,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		208161E418344F9B00854001 /* PBXTargetDependency */ = {
+		2021EA3518D6640800238D1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "ObjectiveGit-iOS-arm64";
-			targetProxy = 208161E318344F9B00854001 /* PBXContainerItemProxy */;
+			name = "ObjectiveGit-iOS";
+			targetProxy = 2021EA3418D6640800238D1E /* PBXContainerItemProxy */;
 		};
 		2095CFBF177F4E9E00D34A8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -574,7 +574,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -607,7 +606,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Git!/objective-git/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Git!/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
 			};
 			name = Debug;
 		};
@@ -615,7 +614,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -641,8 +639,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)../Libs/objective-git/libgit2/include/** $(BUILT_PRODUCTS_DIR)/usr/local/include/**";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include/** $(SRCROOT)../Libs/objective-git/libgit2/include/** /Users/EandZ/Desktop/EveryThing/objective-git/libgit2/include/** /Users/EandZ/Desktop/EveryThing/objective-git/libgit2/include/git2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Git!/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -650,7 +647,6 @@
 		2095CFCB177F4E9E00D34A8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -664,8 +660,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "/Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include $(BUILT_PRODUCTS_DIR)/usr/local/include";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -674,7 +669,6 @@
 		2095CFCC177F4E9E00D34A8A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -688,8 +682,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)../Libs/objective-git/libgit2/include $(BUILT_PRODUCTS_DIR)/usr/local/include";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include $(SRCROOT)../Libs/objective-git/External/libgit2/include /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include $(SRCROOT)/objective-git/External/libgit2/include/";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
