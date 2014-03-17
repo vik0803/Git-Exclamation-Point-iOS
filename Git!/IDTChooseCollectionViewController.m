@@ -38,6 +38,7 @@
     NSError *error = nil;
     __block NSInteger *numberOfFileStatuses = 0;
     __block NSMutableArray *createStatusDeltas = [@[] mutableCopy];
+
     [self.repo enumerateFileStatusWithOptions:@{ GTRepositoryStatusOptionsFlagsKey: @(GTRepositoryStatusFlagsExcludeSubmodules) } error:&error usingBlock:^(GTStatusDelta *headToIndex, GTStatusDelta *indexToWorkingDirectory, BOOL *stop) {
         numberOfFileStatuses++;
         if (headToIndex) {
@@ -46,18 +47,20 @@
             [createStatusDeltas addObject:indexToWorkingDirectory];
         }
     }];
+    
     if(error) NSLog(@"Failure is %@",error);
     self.statusDeltas = createStatusDeltas;
-    if (self.repo.workingDirectoryClean) {
-        NSLog(@"Working directory clean!!!");
-        //FIXME: This isn't good enough.
+   
+    if (self.repo.workingDirectoryClean || [self.statusDeltas isEqualToArray:@[]]) {
+        // FIXME: This isn't good enough.
         CGPoint point = {250,250};
         CGSize size = {300,300};
         CGRect rect = {point,size};
         UILabel *label = [[UILabel alloc]initWithFrame:rect];
-        label.text = @"Working Directory is ✨❕";
+        label.text = @"Working Directory ✨❕";
         [self.collectionView addSubview:label];
     }
+    
     return createStatusDeltas.count;
 }
 

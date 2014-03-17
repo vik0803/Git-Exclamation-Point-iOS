@@ -55,7 +55,9 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-         self.branch = [self.branchManager createLocalBranchWithShortName:[alertView textFieldAtIndex:0].text];
+        NSString *unmodifiedBranchName = [alertView textFieldAtIndex:0].text;
+        NSString *shortName = [unmodifiedBranchName stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+        self.branch = [self.branchManager createLocalBranchWithShortName:shortName];
 
     } else if (buttonIndex == 0) {
         [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO];

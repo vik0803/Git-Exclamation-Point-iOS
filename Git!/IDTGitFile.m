@@ -53,7 +53,7 @@
     }
     GTIndex *index = [self.repo indexWithError:nil];
     NSString *intermediaryString = [self.document.fileURL.path stringByReplacingOccurrencesOfString:self.repo.fileURL.path withString:@""];
-    //Cut the / at the beginning of the path.
+    // Cut the `/` at the beginning of the path.
     NSString *reletivePath = [intermediaryString substringFromIndex:1];
     if ([index removeFile:reletivePath error:error]) {
         [index write:nil];
@@ -72,7 +72,7 @@
     NSError *error = nil;
     BOOL success = 0;
     NSString *intermediaryString = [self.document.fileURL.path stringByReplacingOccurrencesOfString:self.repo.fileURL.path withString:@""];
-    //Cut the / at the beginning of the path.
+    // Cut the '/' at the beginning of the path.
     NSString *relativeString = [intermediaryString substringFromIndex:1];
     NSURL *URL = [NSURL URLWithString:relativeString];
     GTFileStatusFlags flags = GTFileStatusCurrent;
