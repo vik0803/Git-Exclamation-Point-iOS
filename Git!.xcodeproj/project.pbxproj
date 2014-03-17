@@ -606,7 +606,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Git!/objective-git/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Git!/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
 			};
 			name = Debug;
 		};
@@ -639,8 +639,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)../Libs/objective-git/libgit2/include/** $(BUILT_PRODUCTS_DIR)/usr/local/include/**";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include/** $(SRCROOT)../Libs/objective-git/libgit2/include/** /Users/EandZ/Desktop/EveryThing/objective-git/libgit2/include/** /Users/EandZ/Desktop/EveryThing/objective-git/libgit2/include/git2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Git!/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -661,8 +660,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "/Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include $(BUILT_PRODUCTS_DIR)/usr/local/include";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -684,8 +682,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)../Libs/objective-git/libgit2/include $(BUILT_PRODUCTS_DIR)/usr/local/include";
-				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/usr/local/include $(SRCROOT)../Libs/objective-git/External/libgit2/include /Users/EandZ/Documents/Programing/Xcode-Projects/Git!/objective-git/External/libgit2/include";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/usr/local/include $(SRCROOT)/objective-git/External/libgit2/include/";
 				VALID_ARCHS = "arm64 armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
