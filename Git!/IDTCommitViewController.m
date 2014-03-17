@@ -43,7 +43,7 @@
     
     GTCommit *commit = [self.repo createCommitWithTree:tree message:self.commitMessageTextView.text author:signature committer:signature parents:parents updatingReferenceNamed:branch.reference.name error:&error];
 
-    if (!commit) {
+    if (commit != nil || error != nil) {
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:[error description]  delegate:self cancelButtonTitle:@"Apology Accepted" otherButtonTitles:nil];
         [alertView show];
         return;
@@ -57,6 +57,7 @@
         NSString *workingDirStatus = self.repo.workingDirectoryClean ? @"Clean" : @"Dirty";
         message = [NSString stringWithFormat:@"Working Directory is %@",workingDirStatus];
     }
+  
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Done" message:message delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
     [alertView show];
 }
