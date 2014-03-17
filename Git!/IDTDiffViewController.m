@@ -22,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self determineDelta];
-    [self.diffDelta enumerateHunksUsingBlock:^(GTDiffHunk *hunk, BOOL *stop) {
+    GTDiffPatch *patch = [self.diffDelta generatePatch:nil];
+    [patch enumerateHunksUsingBlock:^(GTDiffHunk *hunk, BOOL *stop) {
         NSMutableArray *lines = [NSMutableArray array];
        [hunk enumerateLinesInHunk:nil usingBlock:^(GTDiffLine *line, BOOL *stop) {
            [lines addObject:line];

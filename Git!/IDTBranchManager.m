@@ -83,24 +83,21 @@
 -(GTBranch *)createLocalBranchWithShortName:(NSString *)shortName {
     NSError *error = nil;
     NSString *branchName = [NSString stringWithFormat:@"%@%@",[GTBranch localNamePrefix],shortName];
-    
-    GTReference *headReference = [self.repo headReferenceWithError:nil];
-    GTReference *reference = [GTReference referenceByCreatingReferenceNamed:branchName fromReferenceTarget:headReference.OID.SHA inRepository:self.repo error:&error];
-    GTBranch *branch = [GTBranch branchWithReference:reference repository:reference.repository];
+
+    GTBranch *branch = [self.repo createBranchNamed:branchName fromOID:[[self.repo lookUpObjectByRevParse:@"HEAD" error:&error] OID] committer:[self.repo userSignatureForNow] message:@"Created Branch" error:&error];
     
     [self.repo checkoutReference:branch.reference strategy:GTCheckoutStrategyForce error:&error progressBlock:^(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps) {
         NSLog(@"Checked out file: %@ \n",path);
         NSLog(@"Completed %lu out of %lu",(unsigned long)completedSteps,(unsigned long)totalSteps);
     }];
-    if (error) {
-        NSLog(@"error is %@",error);
-    }
-    if (branch) {
-        return branch;
-        [self.popoverController dismissPopoverAnimated:YES];
-    }
-    return nil;
     
+    if (error || !branch) {
+        NSLog(@"error is %@",error);
+        return nil;
+    }
+
+    [self.popoverController dismissPopoverAnimated:YES];
+    return branch;
 }
 
 -(BOOL)checkoutBranch:(GTBranch *)branch error:(NSError *)error progressBlock:(void (^)(NSString *, NSUInteger, NSUInteger))progressBlock {
