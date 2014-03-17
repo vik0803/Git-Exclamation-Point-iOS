@@ -83,9 +83,10 @@
 -(GTBranch *)createLocalBranchWithShortName:(NSString *)shortName {
     NSError *error = nil;
     NSString *branchName = [NSString stringWithFormat:@"%@%@",[GTBranch localNamePrefix],shortName];
-
-    GTBranch *currentBranch = [self.repo currentBranchWithError:nil];
-    GTBranch *branch = [self.repo createBranchNamed:branchName fromOID:[GTOID oidWithSHA:currentBranch.SHA] committer:[self.repo userSignatureForNow] message:nil error:nil];
+    
+    GTReference *headReference = [self.repo headReferenceWithError:nil];
+    GTReference *reference = [GTReference referenceByCreatingReferenceNamed:branchName fromReferenceTarget:headReference.OID.SHA inRepository:self.repo error:&error];
+    GTBranch *branch = [GTBranch branchWithReference:reference repository:reference.repository];
     
     [self.repo checkoutReference:branch.reference strategy:GTCheckoutStrategyForce error:&error progressBlock:^(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps) {
         NSLog(@"Checked out file: %@ \n",path);
