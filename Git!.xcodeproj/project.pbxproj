@@ -48,12 +48,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		208161E318344F9B00854001 /* PBXContainerItemProxy */ = {
+		2021EA3418D6640800238D1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F6CBB45317FFD50500404926;
-			remoteInfo = "ObjectiveGit-iOS-arm64";
+			remoteGlobalIDString = 04DB4644133AB57600D9C624;
+			remoteInfo = "ObjectiveGit-iOS";
 		};
 		2095CFBE177F4E9E00D34A8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -367,7 +367,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				208161E418344F9B00854001 /* PBXTargetDependency */,
+				2021EA3518D6640800238D1E /* PBXTargetDependency */,
 			);
 			name = "Git!";
 			productName = "Git!";
@@ -530,10 +530,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		208161E418344F9B00854001 /* PBXTargetDependency */ = {
+		2021EA3518D6640800238D1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "ObjectiveGit-iOS-arm64";
-			targetProxy = 208161E318344F9B00854001 /* PBXContainerItemProxy */;
+			name = "ObjectiveGit-iOS";
+			targetProxy = 2021EA3418D6640800238D1E /* PBXContainerItemProxy */;
 		};
 		2095CFBF177F4E9E00D34A8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
