@@ -2,3 +2,9 @@
 	path = objective-git
 	url = https://github.com/libgit2/objective-git.git
 	branch = master
+[submodule "Git!Tests/expecta"]
+	path = Git!Tests/expecta
+	url = https://github.com/specta/expecta
+[submodule "Git!Tests/specta"]
+	path = Git!Tests/specta
+	url = https://github.com/specta/specta
