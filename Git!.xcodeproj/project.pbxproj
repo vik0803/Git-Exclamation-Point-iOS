@@ -284,6 +284,7 @@
 		20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		20F7E71117A0461900B10C73 /* IDTTextStorageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTTextStorageDelegate.h; sourceTree = "<group>"; };
 		20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTTextStorageDelegate.m; sourceTree = "<group>"; };
+		20FAA7DB18D8D53100CBD038 /* Git!Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Git!Tests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +508,7 @@
 			children = (
 				2093A27618D81305009F1B6D /* Specta/Expecta */,
 				2071A91B18D79A360065DBA5 /* IDTGitModelSpec.m */,
+				20FAA7DB18D8D53100CBD038 /* Git!Tests-Prefix.pch */,
 				2071A88818D7983B0065DBA5 /* Specta.xcodeproj */,
 				2071A89718D798460065DBA5 /* Expecta.xcodeproj */,
 				2095CFC6177F4E9E00D34A8A /* Git_Tests.m */,
@@ -999,7 +1001,7 @@
 					"$(SYSTEM_APPS_DIR)/Xcode5-DP2.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Git!/Git!-Prefix.pch";
+				GCC_PREFIX_HEADER = "Git!Tests/Git!Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1028,7 +1030,7 @@
 					"$(SYSTEM_APPS_DIR)/Xcode5-DP2.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Git!/Git!-Prefix.pch";
+				GCC_PREFIX_HEADER = "Git!Tests/Git!Tests-Prefix.pch";
 				INFOPLIST_FILE = "Git!Tests/Git!Tests-Info.plist";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
