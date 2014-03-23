@@ -269,7 +269,6 @@
 		2095CFBA177F4E9E00D34A8A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2095CFC2177F4E9E00D34A8A /* Git!Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Git!Tests-Info.plist"; sourceTree = "<group>"; };
 		2095CFC4177F4E9E00D34A8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2095CFC6177F4E9E00D34A8A /* Git_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Git_Tests.m; sourceTree = "<group>"; };
 		209E8DB51799111700A8C77A /* IDTCreateRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTCreateRepoViewController.h; sourceTree = "<group>"; };
 		209E8DB61799111700A8C77A /* IDTCreateRepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTCreateRepoViewController.m; sourceTree = "<group>"; };
 		20C347AB17B07BBD00A9EED5 /* IDTComponentToHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTComponentToHighlight.h; sourceTree = "<group>"; };
@@ -511,7 +510,6 @@
 				20FAA7DB18D8D53100CBD038 /* Git!Tests-Prefix.pch */,
 				2071A88818D7983B0065DBA5 /* Specta.xcodeproj */,
 				2071A89718D798460065DBA5 /* Expecta.xcodeproj */,
-				2095CFC6177F4E9E00D34A8A /* Git_Tests.m */,
 				2095CFC1177F4E9E00D34A8A /* Supporting Files */,
 			);
 			path = "Git!Tests";
