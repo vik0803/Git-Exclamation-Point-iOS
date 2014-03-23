@@ -16,7 +16,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#import "Specta.h"
+#import "ObjectiveGit.h"
+#import "IDTTestCase.h"
 
 #define EXP_SHORTHAND
 #import "Expecta.h"
