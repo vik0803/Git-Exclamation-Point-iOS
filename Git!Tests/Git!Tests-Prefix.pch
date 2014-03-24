@@ -1,0 +1,25 @@
+//
+//  Git!Tests-Prefix.pch
+//  Git!
+//
+//  Created by E&Z Pierson on 3/18/14.
+//  Copyright (c) 2014 E&Z Pierson. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "ObjectiveGit.h"
+#import "IDTTestCase.h"
+
+#define EXP_SHORTHAND
+#import "Expecta.h"
+
+#endif
