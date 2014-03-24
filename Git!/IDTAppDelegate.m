@@ -10,6 +10,13 @@
 #import "IDTFileEditViewController.h"
 @implementation IDTAppDelegate
 
+#ifdef DEBUG
++ (void)initialize {
+    [[NSUserDefaults standardUserDefaults] setValue:@"IDTTestObserver,XCTestLog" forKey:@"XCTestObserverClass"];
+    [super initialize];
+}
+#endif
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window.rootViewController.view.tintColor = [UIColor purpleColor];

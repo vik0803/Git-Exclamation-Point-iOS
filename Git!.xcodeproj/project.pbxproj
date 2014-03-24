@@ -17,9 +17,10 @@
 		201EA58A180BB27A0046D41B /* IDTCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 201EA589180BB27A0046D41B /* IDTCommitViewController.m */; };
 		204754211829E0C6005372F7 /* IDTBranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204754201829E0C6005372F7 /* IDTBranchTableViewController.m */; };
 		2060499117950859005C65AC /* IDTGitDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2060499017950859005C65AC /* IDTGitDirectory.m */; };
-		2060499217950859005C65AC /* IDTGitDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2060499017950859005C65AC /* IDTGitDirectory.m */; };
 		2071144618066E2200B379E5 /* ObjectiveGit.h in Resources */ = {isa = PBXBuildFile; fileRef = 2071144418066E2200B379E5 /* ObjectiveGit.h */; };
 		2071144718066E2200B379E5 /* ObjectiveGit.m in Resources */ = {isa = PBXBuildFile; fileRef = 2071144518066E2200B379E5 /* ObjectiveGit.m */; };
+		2071A8A918D798720065DBA5 /* libSpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2071A89018D7983B0065DBA5 /* libSpecta-iOS.a */; };
+		2071A91918D7999B0065DBA5 /* libExpecta-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2071A8A218D798460065DBA5 /* libExpecta-iOS.a */; };
 		208161E618344FB500854001 /* libObjectiveGit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A6A1D11804EAC300342D54 /* libObjectiveGit-iOS.a */; };
 		209144F6180BB8B3003D5012 /* IDTStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209144F5180BB8B3003D5012 /* IDTStatusViewController.m */; };
 		2091BCF917813DD100858B97 /* IDTFileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2091BCF817813DD100858B97 /* IDTFileEditViewController.m */; };
@@ -37,14 +38,21 @@
 		2095CFBC177F4E9E00D34A8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2095CF9B177F4E9E00D34A8A /* Foundation.framework */; };
 		2095CFBD177F4E9E00D34A8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2095CF9F177F4E9E00D34A8A /* UIKit.framework */; };
 		2095CFC5177F4E9E00D34A8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2095CFC3177F4E9E00D34A8A /* InfoPlist.strings */; };
-		2095CFC7177F4E9E00D34A8A /* Git_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2095CFC6177F4E9E00D34A8A /* Git_Tests.m */; };
 		209E8DB71799111700A8C77A /* IDTCreateRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209E8DB61799111700A8C77A /* IDTCreateRepoViewController.m */; };
+		20B2858618D95C1800D6FA4C /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2858518D95C1800D6FA4C /* SSZipArchive.m */; };
+		20B2859018D95C3200D6FA4C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 20B2858818D95C3200D6FA4C /* ioapi.c */; };
+		20B2859118D95C3200D6FA4C /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 20B2858A18D95C3200D6FA4C /* mztools.c */; };
+		20B2859218D95C3200D6FA4C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 20B2858C18D95C3200D6FA4C /* unzip.c */; };
+		20B2859318D95C3200D6FA4C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 20B2858E18D95C3200D6FA4C /* zip.c */; };
 		20C347AD17B07BBD00A9EED5 /* IDTComponentToHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C347AC17B07BBD00A9EED5 /* IDTComponentToHighlight.m */; };
 		20C5E33118088228003BA1F4 /* IDTChooseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C5E33018088228003BA1F4 /* IDTChooseCollectionViewController.m */; };
 		20C76900177F99AF00C3449F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C768FF177F99AF00C3449F /* libz.dylib */; };
 		20DCBF411832ED630047D9EA /* IDTBranchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DCBF401832ED630047D9EA /* IDTBranchManager.m */; };
 		20E1324D1783C46900B547D3 /* IDTDiffViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E1324C1783C46900B547D3 /* IDTDiffViewController.m */; };
 		20F7E71317A0461900B10C73 /* IDTTextStorageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */; };
+		20F874E818DC1345006DDC51 /* IDTTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F874E718DC1345006DDC51 /* IDTTestObserver.m */; };
+		20FAA7DD18D9392100CBD038 /* fixtures.zip in Resources */ = {isa = PBXBuildFile; fileRef = 20FAA7DC18D9392100CBD038 /* fixtures.zip */; };
+		20FAA7E018D93CFB00CBD038 /* IDTTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FAA7DF18D93CFB00CBD038 /* IDTTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +62,83 @@
 			proxyType = 1;
 			remoteGlobalIDString = 04DB4644133AB57600D9C624;
 			remoteInfo = "ObjectiveGit-iOS";
+		};
+		2071A88F18D7983B0065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A88818D7983B0065DBA5 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9901BFD18205A3500844A05;
+			remoteInfo = "Specta-iOS";
+		};
+		2071A89118D7983B0065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A88818D7983B0065DBA5 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9901C2A18205AB100844A05;
+			remoteInfo = "Specta-OSX";
+		};
+		2071A89318D7983B0065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A88818D7983B0065DBA5 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9901C0D18205A3500844A05;
+			remoteInfo = "SpectaTests-iOS";
+		};
+		2071A89518D7983B0065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A88818D7983B0065DBA5 /* Specta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9901C3B18205AB100844A05;
+			remoteInfo = "Specta-OSXTests";
+		};
+		2071A89F18D798460065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A89718D798460065DBA5 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9ACDF0C13B2DD520010F4D7;
+			remoteInfo = Expecta;
+		};
+		2071A8A118D798460065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A89718D798460065DBA5 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E93067CE13B2E6D100EA26FF;
+			remoteInfo = "Expecta-iOS";
+		};
+		2071A8A318D798460065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A89718D798460065DBA5 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9ACDF1D13B2DD520010F4D7;
+			remoteInfo = ExpectaTests;
+		};
+		2071A8A518D798460065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A89718D798460065DBA5 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E93067DA13B2E6D100EA26FF;
+			remoteInfo = "Expecta-iOSTests";
+		};
+		2071A8A718D798460065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A89718D798460065DBA5 /* Expecta.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C4416F917FF3F4A00978F09;
+			remoteInfo = "ExpectaTests-XCTest";
+		};
+		2071A8C918D798F70065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A88818D7983B0065DBA5 /* Specta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E9901BFC18205A3500844A05;
+			remoteInfo = "Specta-iOS";
+		};
+		2071A8CB18D798FB0065DBA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2071A89718D798460065DBA5 /* Expecta.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E93067CD13B2E6D100EA26FF;
+			remoteInfo = "Expecta-iOS";
 		};
 		2095CFBE177F4E9E00D34A8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -113,12 +198,65 @@
 		2060499017950859005C65AC /* IDTGitDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitDirectory.m; sourceTree = "<group>"; };
 		2071144418066E2200B379E5 /* ObjectiveGit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ObjectiveGit.h; path = "../objective-git/Classes/ObjectiveGit.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2071144518066E2200B379E5 /* ObjectiveGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveGit.m; path = "../objective-git/Classes/ObjectiveGit.m"; sourceTree = "<group>"; };
+		2071A88818D7983B0065DBA5 /* Specta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Specta.xcodeproj; path = specta/Specta.xcodeproj; sourceTree = "<group>"; };
+		2071A89718D798460065DBA5 /* Expecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expecta.xcodeproj; path = expecta/Expecta.xcodeproj; sourceTree = "<group>"; };
 		209144F4180BB8B3003D5012 /* IDTStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTStatusViewController.h; sourceTree = "<group>"; };
 		209144F5180BB8B3003D5012 /* IDTStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTStatusViewController.m; sourceTree = "<group>"; };
 		2091BCF717813DD100858B97 /* IDTFileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTFileEditViewController.h; sourceTree = "<group>"; };
 		2091BCF817813DD100858B97 /* IDTFileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTFileEditViewController.m; sourceTree = "<group>"; };
 		2091BCFA17813E0100858B97 /* IDTFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTFileViewController.h; sourceTree = "<group>"; };
 		2091BCFB17813E0100858B97 /* IDTFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTFileViewController.m; sourceTree = "<group>"; };
+		2093A25218D812F7009F1B6D /* EXPBackwardCompatibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPBackwardCompatibility.h; path = expecta/products/EXPBackwardCompatibility.h; sourceTree = "<group>"; };
+		2093A25318D812F7009F1B6D /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = expecta/products/EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
+		2093A25418D812F7009F1B6D /* EXPDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPDefines.h; path = expecta/products/EXPDefines.h; sourceTree = "<group>"; };
+		2093A25518D812F7009F1B6D /* EXPDoubleTuple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPDoubleTuple.h; path = expecta/products/EXPDoubleTuple.h; sourceTree = "<group>"; };
+		2093A25618D812F7009F1B6D /* Expecta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Expecta.h; path = expecta/products/Expecta.h; sourceTree = "<group>"; };
+		2093A25718D812F7009F1B6D /* ExpectaSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ExpectaSupport.h; path = expecta/products/ExpectaSupport.h; sourceTree = "<group>"; };
+		2093A25818D812F7009F1B6D /* EXPExpect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPExpect.h; path = expecta/products/EXPExpect.h; sourceTree = "<group>"; };
+		2093A25918D812F7009F1B6D /* EXPFloatTuple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPFloatTuple.h; path = expecta/products/EXPFloatTuple.h; sourceTree = "<group>"; };
+		2093A25A18D812F7009F1B6D /* EXPMatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPMatcher.h; path = expecta/products/EXPMatcher.h; sourceTree = "<group>"; };
+		2093A25B18D812F7009F1B6D /* EXPMatcherHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPMatcherHelpers.h; path = expecta/products/EXPMatcherHelpers.h; sourceTree = "<group>"; };
+		2093A25C18D812F7009F1B6D /* EXPMatchers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPMatchers.h; path = expecta/products/EXPMatchers.h; sourceTree = "<group>"; };
+		2093A25D18D812F7009F1B6D /* EXPMatchers+beCloseTo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beCloseTo.h"; path = "expecta/products/EXPMatchers+beCloseTo.h"; sourceTree = "<group>"; };
+		2093A25E18D812F7009F1B6D /* EXPMatchers+beFalsy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beFalsy.h"; path = "expecta/products/EXPMatchers+beFalsy.h"; sourceTree = "<group>"; };
+		2093A25F18D812F7009F1B6D /* EXPMatchers+beginWith.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beginWith.h"; path = "expecta/products/EXPMatchers+beginWith.h"; sourceTree = "<group>"; };
+		2093A26018D812F7009F1B6D /* EXPMatchers+beGreaterThan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThan.h"; path = "expecta/products/EXPMatchers+beGreaterThan.h"; sourceTree = "<group>"; };
+		2093A26118D812F7009F1B6D /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "expecta/products/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
+		2093A26218D812F7009F1B6D /* EXPMatchers+beIdenticalTo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beIdenticalTo.h"; path = "expecta/products/EXPMatchers+beIdenticalTo.h"; sourceTree = "<group>"; };
+		2093A26318D812F7009F1B6D /* EXPMatchers+beInstanceOf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInstanceOf.h"; path = "expecta/products/EXPMatchers+beInstanceOf.h"; sourceTree = "<group>"; };
+		2093A26418D812F7009F1B6D /* EXPMatchers+beInTheRangeOf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInTheRangeOf.h"; path = "expecta/products/EXPMatchers+beInTheRangeOf.h"; sourceTree = "<group>"; };
+		2093A26518D812F7009F1B6D /* EXPMatchers+beKindOf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beKindOf.h"; path = "expecta/products/EXPMatchers+beKindOf.h"; sourceTree = "<group>"; };
+		2093A26618D812F7009F1B6D /* EXPMatchers+beLessThan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThan.h"; path = "expecta/products/EXPMatchers+beLessThan.h"; sourceTree = "<group>"; };
+		2093A26718D812F7009F1B6D /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "expecta/products/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = "<group>"; };
+		2093A26818D812F7009F1B6D /* EXPMatchers+beNil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beNil.h"; path = "expecta/products/EXPMatchers+beNil.h"; sourceTree = "<group>"; };
+		2093A26918D812F7009F1B6D /* EXPMatchers+beSubclassOf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSubclassOf.h"; path = "expecta/products/EXPMatchers+beSubclassOf.h"; sourceTree = "<group>"; };
+		2093A26A18D812F7009F1B6D /* EXPMatchers+beSupersetOf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSupersetOf.h"; path = "expecta/products/EXPMatchers+beSupersetOf.h"; sourceTree = "<group>"; };
+		2093A26B18D812F7009F1B6D /* EXPMatchers+beTruthy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beTruthy.h"; path = "expecta/products/EXPMatchers+beTruthy.h"; sourceTree = "<group>"; };
+		2093A26C18D812F7009F1B6D /* EXPMatchers+conformTo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+conformTo.h"; path = "expecta/products/EXPMatchers+conformTo.h"; sourceTree = "<group>"; };
+		2093A26D18D812F7009F1B6D /* EXPMatchers+contain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+contain.h"; path = "expecta/products/EXPMatchers+contain.h"; sourceTree = "<group>"; };
+		2093A26E18D812F7009F1B6D /* EXPMatchers+endWith.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+endWith.h"; path = "expecta/products/EXPMatchers+endWith.h"; sourceTree = "<group>"; };
+		2093A26F18D812F7009F1B6D /* EXPMatchers+equal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+equal.h"; path = "expecta/products/EXPMatchers+equal.h"; sourceTree = "<group>"; };
+		2093A27018D812F7009F1B6D /* EXPMatchers+haveCountOf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+haveCountOf.h"; path = "expecta/products/EXPMatchers+haveCountOf.h"; sourceTree = "<group>"; };
+		2093A27118D812F7009F1B6D /* EXPMatchers+notify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+notify.h"; path = "expecta/products/EXPMatchers+notify.h"; sourceTree = "<group>"; };
+		2093A27218D812F7009F1B6D /* EXPMatchers+raise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raise.h"; path = "expecta/products/EXPMatchers+raise.h"; sourceTree = "<group>"; };
+		2093A27318D812F7009F1B6D /* EXPMatchers+raiseWithReason.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raiseWithReason.h"; path = "expecta/products/EXPMatchers+raiseWithReason.h"; sourceTree = "<group>"; };
+		2093A27418D812F7009F1B6D /* EXPMatchers+respondTo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+respondTo.h"; path = "expecta/products/EXPMatchers+respondTo.h"; sourceTree = "<group>"; };
+		2093A27518D812F7009F1B6D /* EXPUnsupportedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EXPUnsupportedObject.h; path = expecta/products/EXPUnsupportedObject.h; sourceTree = "<group>"; };
+		2093A27718D813EB009F1B6D /* Specta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Specta.h; path = specta/products/Specta.h; sourceTree = "<group>"; };
+		2093A27818D813EB009F1B6D /* SpectaSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SpectaSupport.h; path = specta/products/SpectaSupport.h; sourceTree = "<group>"; };
+		2093A27918D813EB009F1B6D /* SpectaTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SpectaTypes.h; path = specta/products/SpectaTypes.h; sourceTree = "<group>"; };
+		2093A27A18D813EB009F1B6D /* SpectaUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SpectaUtility.h; path = specta/products/SpectaUtility.h; sourceTree = "<group>"; };
+		2093A27B18D813EB009F1B6D /* SPTExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = specta/products/SPTExample.h; sourceTree = "<group>"; };
+		2093A27C18D813EB009F1B6D /* SPTExampleGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPTExampleGroup.h; path = specta/products/SPTExampleGroup.h; sourceTree = "<group>"; };
+		2093A27D18D813EB009F1B6D /* SPTNestedReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPTNestedReporter.h; path = specta/products/SPTNestedReporter.h; sourceTree = "<group>"; };
+		2093A27E18D813EB009F1B6D /* SPTReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPTReporter.h; path = specta/products/SPTReporter.h; sourceTree = "<group>"; };
+		2093A27F18D813EB009F1B6D /* SPTSharedExampleGroups.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPTSharedExampleGroups.h; path = specta/products/SPTSharedExampleGroups.h; sourceTree = "<group>"; };
+		2093A28018D813EB009F1B6D /* SPTSpec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPTSpec.h; path = specta/products/SPTSpec.h; sourceTree = "<group>"; };
+		2093A28118D813EB009F1B6D /* SPTXCTestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPTXCTestCase.h; path = specta/products/SPTXCTestCase.h; sourceTree = "<group>"; };
+		2093A28218D813EB009F1B6D /* SPTXCTestReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPTXCTestReporter.h; path = specta/products/SPTXCTestReporter.h; sourceTree = "<group>"; };
+		2093A28318D813EB009F1B6D /* XCTestCase+Specta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "XCTestCase+Specta.h"; path = "specta/products/XCTestCase+Specta.h"; sourceTree = "<group>"; };
+		2093A28418D813EB009F1B6D /* XCTestLog+Specta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "XCTestLog+Specta.h"; path = "specta/products/XCTestLog+Specta.h"; sourceTree = "<group>"; };
+		2093A28518D813EB009F1B6D /* XCTestRun+Specta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "XCTestRun+Specta.h"; path = "specta/products/XCTestRun+Specta.h"; sourceTree = "<group>"; };
 		209570141798E98700FDF3AD /* IDTRepositoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTRepositoryTableViewController.h; sourceTree = "<group>"; };
 		209570151798E98700FDF3AD /* IDTRepositoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTRepositoryTableViewController.m; sourceTree = "<group>"; };
 		2095CF98177F4E9E00D34A8A /* Git!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Git!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,9 +275,19 @@
 		2095CFBA177F4E9E00D34A8A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2095CFC2177F4E9E00D34A8A /* Git!Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Git!Tests-Info.plist"; sourceTree = "<group>"; };
 		2095CFC4177F4E9E00D34A8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2095CFC6177F4E9E00D34A8A /* Git_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Git_Tests.m; sourceTree = "<group>"; };
 		209E8DB51799111700A8C77A /* IDTCreateRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTCreateRepoViewController.h; sourceTree = "<group>"; };
 		209E8DB61799111700A8C77A /* IDTCreateRepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTCreateRepoViewController.m; sourceTree = "<group>"; };
+		20B2858418D95C1800D6FA4C /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = External/ssziparchive/SSZipArchive/SSZipArchive.h; sourceTree = "<group>"; };
+		20B2858518D95C1800D6FA4C /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = External/ssziparchive/SSZipArchive/SSZipArchive.m; sourceTree = "<group>"; };
+		20B2858718D95C3200D6FA4C /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = External/ssziparchive/SSZipArchive/minizip/crypt.h; sourceTree = "<group>"; };
+		20B2858818D95C3200D6FA4C /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = External/ssziparchive/SSZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
+		20B2858918D95C3200D6FA4C /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = External/ssziparchive/SSZipArchive/minizip/ioapi.h; sourceTree = "<group>"; };
+		20B2858A18D95C3200D6FA4C /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = External/ssziparchive/SSZipArchive/minizip/mztools.c; sourceTree = "<group>"; };
+		20B2858B18D95C3200D6FA4C /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = External/ssziparchive/SSZipArchive/minizip/mztools.h; sourceTree = "<group>"; };
+		20B2858C18D95C3200D6FA4C /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = External/ssziparchive/SSZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
+		20B2858D18D95C3200D6FA4C /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = External/ssziparchive/SSZipArchive/minizip/unzip.h; sourceTree = "<group>"; };
+		20B2858E18D95C3200D6FA4C /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = External/ssziparchive/SSZipArchive/minizip/zip.c; sourceTree = "<group>"; };
+		20B2858F18D95C3200D6FA4C /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = External/ssziparchive/SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
 		20C347AB17B07BBD00A9EED5 /* IDTComponentToHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTComponentToHighlight.h; sourceTree = "<group>"; };
 		20C347AC17B07BBD00A9EED5 /* IDTComponentToHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTComponentToHighlight.m; sourceTree = "<group>"; };
 		20C5E32F18088228003BA1F4 /* IDTChooseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTChooseCollectionViewController.h; sourceTree = "<group>"; };
@@ -152,6 +300,12 @@
 		20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		20F7E71117A0461900B10C73 /* IDTTextStorageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTTextStorageDelegate.h; sourceTree = "<group>"; };
 		20F7E71217A0461900B10C73 /* IDTTextStorageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTTextStorageDelegate.m; sourceTree = "<group>"; };
+		20F874E618DC1345006DDC51 /* IDTTestObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTTestObserver.h; sourceTree = "<group>"; };
+		20F874E718DC1345006DDC51 /* IDTTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTTestObserver.m; sourceTree = "<group>"; };
+		20FAA7DB18D8D53100CBD038 /* Git!Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Git!Tests-Prefix.pch"; sourceTree = "<group>"; };
+		20FAA7DC18D9392100CBD038 /* fixtures.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = fixtures.zip; path = "../objective-git/ObjectiveGitTests/fixtures/fixtures.zip"; sourceTree = "<group>"; };
+		20FAA7DE18D93CFB00CBD038 /* IDTTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTTestCase.h; sourceTree = "<group>"; };
+		20FAA7DF18D93CFB00CBD038 /* IDTTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +326,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2071A91918D7999B0065DBA5 /* libExpecta-iOS.a in Frameworks */,
+				2071A8A918D798720065DBA5 /* libSpecta-iOS.a in Frameworks */,
 				2095CFBB177F4E9E00D34A8A /* XCTest.framework in Frameworks */,
 				2095CFBD177F4E9E00D34A8A /* UIKit.framework in Frameworks */,
 				2095CFBC177F4E9E00D34A8A /* Foundation.framework in Frameworks */,
@@ -205,6 +361,29 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
+		2071A88918D7983B0065DBA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2071A89018D7983B0065DBA5 /* libSpecta-iOS.a */,
+				2071A89218D7983B0065DBA5 /* libSpecta-OSX.a */,
+				2071A89418D7983B0065DBA5 /* SpectaTests-iOS.xctest */,
+				2071A89618D7983B0065DBA5 /* Specta-OSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2071A89818D798460065DBA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2071A8A018D798460065DBA5 /* libExpecta.a */,
+				2071A8A218D798460065DBA5 /* libExpecta-iOS.a */,
+				2071A8A418D798460065DBA5 /* ExpectaTests.octest */,
+				2071A8A618D798460065DBA5 /* Expecta-iOSTests.octest */,
+				2071A8A818D798460065DBA5 /* ExpectaTests-XCTest.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		209144FE180BB8BE003D5012 /* Commit Workflow */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +397,64 @@
 				20E1324C1783C46900B547D3 /* IDTDiffViewController.m */,
 			);
 			name = "Commit Workflow";
+			sourceTree = "<group>";
+		};
+		2093A27618D81305009F1B6D /* Specta/Expecta */ = {
+			isa = PBXGroup;
+			children = (
+				2093A27718D813EB009F1B6D /* Specta.h */,
+				2093A27818D813EB009F1B6D /* SpectaSupport.h */,
+				2093A27918D813EB009F1B6D /* SpectaTypes.h */,
+				2093A27A18D813EB009F1B6D /* SpectaUtility.h */,
+				2093A27B18D813EB009F1B6D /* SPTExample.h */,
+				2093A27C18D813EB009F1B6D /* SPTExampleGroup.h */,
+				2093A27D18D813EB009F1B6D /* SPTNestedReporter.h */,
+				2093A27E18D813EB009F1B6D /* SPTReporter.h */,
+				2093A27F18D813EB009F1B6D /* SPTSharedExampleGroups.h */,
+				2093A28018D813EB009F1B6D /* SPTSpec.h */,
+				2093A28118D813EB009F1B6D /* SPTXCTestCase.h */,
+				2093A28218D813EB009F1B6D /* SPTXCTestReporter.h */,
+				2093A28318D813EB009F1B6D /* XCTestCase+Specta.h */,
+				2093A28418D813EB009F1B6D /* XCTestLog+Specta.h */,
+				2093A28518D813EB009F1B6D /* XCTestRun+Specta.h */,
+				2093A25218D812F7009F1B6D /* EXPBackwardCompatibility.h */,
+				2093A25318D812F7009F1B6D /* EXPBlockDefinedMatcher.h */,
+				2093A25418D812F7009F1B6D /* EXPDefines.h */,
+				2093A25518D812F7009F1B6D /* EXPDoubleTuple.h */,
+				2093A25618D812F7009F1B6D /* Expecta.h */,
+				2093A25718D812F7009F1B6D /* ExpectaSupport.h */,
+				2093A25818D812F7009F1B6D /* EXPExpect.h */,
+				2093A25918D812F7009F1B6D /* EXPFloatTuple.h */,
+				2093A25A18D812F7009F1B6D /* EXPMatcher.h */,
+				2093A25B18D812F7009F1B6D /* EXPMatcherHelpers.h */,
+				2093A25C18D812F7009F1B6D /* EXPMatchers.h */,
+				2093A25D18D812F7009F1B6D /* EXPMatchers+beCloseTo.h */,
+				2093A25E18D812F7009F1B6D /* EXPMatchers+beFalsy.h */,
+				2093A25F18D812F7009F1B6D /* EXPMatchers+beginWith.h */,
+				2093A26018D812F7009F1B6D /* EXPMatchers+beGreaterThan.h */,
+				2093A26118D812F7009F1B6D /* EXPMatchers+beGreaterThanOrEqualTo.h */,
+				2093A26218D812F7009F1B6D /* EXPMatchers+beIdenticalTo.h */,
+				2093A26318D812F7009F1B6D /* EXPMatchers+beInstanceOf.h */,
+				2093A26418D812F7009F1B6D /* EXPMatchers+beInTheRangeOf.h */,
+				2093A26518D812F7009F1B6D /* EXPMatchers+beKindOf.h */,
+				2093A26618D812F7009F1B6D /* EXPMatchers+beLessThan.h */,
+				2093A26718D812F7009F1B6D /* EXPMatchers+beLessThanOrEqualTo.h */,
+				2093A26818D812F7009F1B6D /* EXPMatchers+beNil.h */,
+				2093A26918D812F7009F1B6D /* EXPMatchers+beSubclassOf.h */,
+				2093A26A18D812F7009F1B6D /* EXPMatchers+beSupersetOf.h */,
+				2093A26B18D812F7009F1B6D /* EXPMatchers+beTruthy.h */,
+				2093A26C18D812F7009F1B6D /* EXPMatchers+conformTo.h */,
+				2093A26D18D812F7009F1B6D /* EXPMatchers+contain.h */,
+				2093A26E18D812F7009F1B6D /* EXPMatchers+endWith.h */,
+				2093A26F18D812F7009F1B6D /* EXPMatchers+equal.h */,
+				2093A27018D812F7009F1B6D /* EXPMatchers+haveCountOf.h */,
+				2093A27118D812F7009F1B6D /* EXPMatchers+notify.h */,
+				2093A27218D812F7009F1B6D /* EXPMatchers+raise.h */,
+				2093A27318D812F7009F1B6D /* EXPMatchers+raiseWithReason.h */,
+				2093A27418D812F7009F1B6D /* EXPMatchers+respondTo.h */,
+				2093A27518D812F7009F1B6D /* EXPUnsupportedObject.h */,
+			);
+			name = Specta/Expecta;
 			sourceTree = "<group>";
 		};
 		2095CF8F177F4E9E00D34A8A = {
@@ -290,7 +527,17 @@
 		2095CFC0177F4E9E00D34A8A /* Git!Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2095CFC6177F4E9E00D34A8A /* Git_Tests.m */,
+				2093A27618D81305009F1B6D /* Specta/Expecta */,
+				20B2859418D95C3D00D6FA4C /* minizip */,
+				20B2858418D95C1800D6FA4C /* SSZipArchive.h */,
+				20B2858518D95C1800D6FA4C /* SSZipArchive.m */,
+				20F874E618DC1345006DDC51 /* IDTTestObserver.h */,
+				20F874E718DC1345006DDC51 /* IDTTestObserver.m */,
+				20FAA7DE18D93CFB00CBD038 /* IDTTestCase.h */,
+				20FAA7DF18D93CFB00CBD038 /* IDTTestCase.m */,
+				20FAA7DB18D8D53100CBD038 /* Git!Tests-Prefix.pch */,
+				2071A88818D7983B0065DBA5 /* Specta.xcodeproj */,
+				2071A89718D798460065DBA5 /* Expecta.xcodeproj */,
 				2095CFC1177F4E9E00D34A8A /* Supporting Files */,
 			);
 			path = "Git!Tests";
@@ -299,10 +546,27 @@
 		2095CFC1177F4E9E00D34A8A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				20FAA7DC18D9392100CBD038 /* fixtures.zip */,
 				2095CFC2177F4E9E00D34A8A /* Git!Tests-Info.plist */,
 				2095CFC3177F4E9E00D34A8A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20B2859418D95C3D00D6FA4C /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				20B2858718D95C3200D6FA4C /* crypt.h */,
+				20B2858818D95C3200D6FA4C /* ioapi.c */,
+				20B2858918D95C3200D6FA4C /* ioapi.h */,
+				20B2858A18D95C3200D6FA4C /* mztools.c */,
+				20B2858B18D95C3200D6FA4C /* mztools.h */,
+				20B2858C18D95C3200D6FA4C /* unzip.c */,
+				20B2858D18D95C3200D6FA4C /* unzip.h */,
+				20B2858E18D95C3200D6FA4C /* zip.c */,
+				20B2858F18D95C3200D6FA4C /* zip.h */,
+			);
+			name = minizip;
 			sourceTree = "<group>";
 		};
 		20BE04F41824A9F600867ED0 /* File Navigation */ = {
@@ -385,6 +649,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				2071A8CC18D798FB0065DBA5 /* PBXTargetDependency */,
+				2071A8CA18D798F70065DBA5 /* PBXTargetDependency */,
 				2095CFBF177F4E9E00D34A8A /* PBXTargetDependency */,
 			);
 			name = "Git!Tests";
@@ -423,8 +689,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 2071A89818D798460065DBA5 /* Products */;
+					ProjectRef = 2071A89718D798460065DBA5 /* Expecta.xcodeproj */;
+				},
+				{
 					ProductGroup = 20F21F4617D8412E0008FE61 /* Products */;
 					ProjectRef = 20F21F4517D8412E0008FE61 /* ObjectiveGitFramework.xcodeproj */;
+				},
+				{
+					ProductGroup = 2071A88918D7983B0065DBA5 /* Products */;
+					ProjectRef = 2071A88818D7983B0065DBA5 /* Specta.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -436,6 +710,69 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2071A89018D7983B0065DBA5 /* libSpecta-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libSpecta-iOS.a";
+			remoteRef = 2071A88F18D7983B0065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2071A89218D7983B0065DBA5 /* libSpecta-OSX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libSpecta-OSX.a";
+			remoteRef = 2071A89118D7983B0065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2071A89418D7983B0065DBA5 /* SpectaTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SpectaTests-iOS.xctest";
+			remoteRef = 2071A89318D7983B0065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2071A89618D7983B0065DBA5 /* Specta-OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Specta-OSXTests.xctest";
+			remoteRef = 2071A89518D7983B0065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2071A8A018D798460065DBA5 /* libExpecta.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libExpecta.a;
+			remoteRef = 2071A89F18D798460065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2071A8A218D798460065DBA5 /* libExpecta-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libExpecta-iOS.a";
+			remoteRef = 2071A8A118D798460065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2071A8A418D798460065DBA5 /* ExpectaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ExpectaTests.octest;
+			remoteRef = 2071A8A318D798460065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2071A8A618D798460065DBA5 /* Expecta-iOSTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Expecta-iOSTests.octest";
+			remoteRef = 2071A8A518D798460065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2071A8A818D798460065DBA5 /* ExpectaTests-XCTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ExpectaTests-XCTest.xctest";
+			remoteRef = 2071A8A718D798460065DBA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		20A6A1D11804EAC300342D54 /* libObjectiveGit-iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -485,6 +822,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2095CFC5177F4E9E00D34A8A /* InfoPlist.strings in Resources */,
+				20FAA7DD18D9392100CBD038 /* fixtures.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,8 +860,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2060499217950859005C65AC /* IDTGitDirectory.m in Sources */,
-				2095CFC7177F4E9E00D34A8A /* Git_Tests.m in Sources */,
+				20B2859218D95C3200D6FA4C /* unzip.c in Sources */,
+				20FAA7E018D93CFB00CBD038 /* IDTTestCase.m in Sources */,
+				20B2859018D95C3200D6FA4C /* ioapi.c in Sources */,
+				20B2859318D95C3200D6FA4C /* zip.c in Sources */,
+				20F874E818DC1345006DDC51 /* IDTTestObserver.m in Sources */,
+				20B2858618D95C1800D6FA4C /* SSZipArchive.m in Sources */,
+				20B2859118D95C3200D6FA4C /* mztools.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +877,16 @@
 			isa = PBXTargetDependency;
 			name = "ObjectiveGit-iOS";
 			targetProxy = 2021EA3418D6640800238D1E /* PBXContainerItemProxy */;
+		};
+		2071A8CA18D798F70065DBA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Specta-iOS";
+			targetProxy = 2071A8C918D798F70065DBA5 /* PBXContainerItemProxy */;
+		};
+		2071A8CC18D798FB0065DBA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Expecta-iOS";
+			targetProxy = 2071A8CB18D798FB0065DBA5 /* PBXContainerItemProxy */;
 		};
 		2095CFBF177F4E9E00D34A8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -606,7 +959,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Git!/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
 			};
 			name = Debug;
 		};
@@ -639,7 +992,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Git!/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -698,14 +1051,21 @@
 					"$(SYSTEM_APPS_DIR)/Xcode5-DP2.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Git!/Git!-Prefix.pch";
+				GCC_PREFIX_HEADER = "Git!Tests/Git!Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Git!Tests/Git!Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObJC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -720,10 +1080,17 @@
 					"$(SYSTEM_APPS_DIR)/Xcode5-DP2.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Git!/Git!-Prefix.pch";
+				GCC_PREFIX_HEADER = "Git!Tests/Git!Tests-Prefix.pch";
 				INFOPLIST_FILE = "Git!Tests/Git!Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/objective-git/External/libgit2/include/ $(BUILT_PRODUCTS_DIR)/usr/local/include/";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
