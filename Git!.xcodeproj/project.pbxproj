@@ -15,7 +15,6 @@
 		201BCC791780E57100F8CA32 /* IDTGitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC781780E57100F8CA32 /* IDTGitObject.m */; };
 		201BCC7B1780E5FC00F8CA32 /* IDTDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BCC7A1780E5FC00F8CA32 /* IDTDocument.m */; };
 		201EA58A180BB27A0046D41B /* IDTCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 201EA589180BB27A0046D41B /* IDTCommitViewController.m */; };
-		2040B35018D7BDD50033F957 /* IDTGitModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2071A91B18D79A360065DBA5 /* IDTGitModelSpec.m */; };
 		204754211829E0C6005372F7 /* IDTBranchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204754201829E0C6005372F7 /* IDTBranchTableViewController.m */; };
 		2060499117950859005C65AC /* IDTGitDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2060499017950859005C65AC /* IDTGitDirectory.m */; };
 		2071144618066E2200B379E5 /* ObjectiveGit.h in Resources */ = {isa = PBXBuildFile; fileRef = 2071144418066E2200B379E5 /* ObjectiveGit.h */; };
@@ -201,7 +200,6 @@
 		2071144518066E2200B379E5 /* ObjectiveGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectiveGit.m; path = "../objective-git/Classes/ObjectiveGit.m"; sourceTree = "<group>"; };
 		2071A88818D7983B0065DBA5 /* Specta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Specta.xcodeproj; path = specta/Specta.xcodeproj; sourceTree = "<group>"; };
 		2071A89718D798460065DBA5 /* Expecta.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expecta.xcodeproj; path = expecta/Expecta.xcodeproj; sourceTree = "<group>"; };
-		2071A91B18D79A360065DBA5 /* IDTGitModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTGitModelSpec.m; sourceTree = "<group>"; };
 		209144F4180BB8B3003D5012 /* IDTStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTStatusViewController.h; sourceTree = "<group>"; };
 		209144F5180BB8B3003D5012 /* IDTStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDTStatusViewController.m; sourceTree = "<group>"; };
 		2091BCF717813DD100858B97 /* IDTFileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDTFileEditViewController.h; sourceTree = "<group>"; };
@@ -530,7 +528,6 @@
 			isa = PBXGroup;
 			children = (
 				2093A27618D81305009F1B6D /* Specta/Expecta */,
-				2071A91B18D79A360065DBA5 /* IDTGitModelSpec.m */,
 				20B2859418D95C3D00D6FA4C /* minizip */,
 				20B2858418D95C1800D6FA4C /* SSZipArchive.h */,
 				20B2858518D95C1800D6FA4C /* SSZipArchive.m */,
@@ -863,7 +860,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2040B35018D7BDD50033F957 /* IDTGitModelSpec.m in Sources */,
 				20B2859218D95C3200D6FA4C /* unzip.c in Sources */,
 				20FAA7E018D93CFB00CBD038 /* IDTTestCase.m in Sources */,
 				20B2859018D95C3200D6FA4C /* ioapi.c in Sources */,
